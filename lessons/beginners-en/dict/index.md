@@ -98,119 +98,114 @@ colours = {
 
 ## Iteration
 
-Když dáš slovník do cyklu `for`, dostaneš klíče:
+When you put dictionary into `for` cycle you will get only keys:
 
 ```pycon
->>> popisy_funkci = {'len': 'délka', 'str': 'řetězec', 'dict': 'slovník'}
->>> for klic in popisy_funkci:
-...     print(klic)
+>>> func_descript = {'len': 'length', 'str': 'string', 'dict': 'dictionary'}
+>>> for key in func_descript:
+...     print(key)
 str
 dict
 len
 ```
 
-Pokud chceš hodnoty, stačí použít metodu `values`:
+But when you want to know the values you will have to use the method `values`:
 
 ```pycon
->>> for hodnota in popisy_funkci.values():
-...     print(hodnota)
-řetězec
-slovník
-délka
+>>> for value in func_descript.values():
+...     print(value)
+string
+dictionary
+length
 ```
 
-Většinou ale potřebuješ jak klíče tak hodnoty.
-K tomu mají slovníky metodu `items`,
-která bude v cyklu `for` dávat dvojice:
+But mostly you will need both - keys and values.
+For this purpose dictionaries have method `items`. 
 
 ```pycon
->>> for klic, hodnota in popisy_funkci.items():
-...     print('{}: {}'.format(klic, hodnota))
-str: řetězec
-dict: slovník
-len: délka
+>>> for key, value func_descript.items():
+...     print('{}: {}'.format(key, value))
+str: string
+dict: dictionary
+len: length
 ```
 
 > [note]
-> Existuje i metoda `keys()`, která vrací klíče.
+> There is also method `keys()` which return just keys.
 >
-> To, co `keys()`, `values()` a `items()` vrací, jsou speciální objekty,
-> které kromě použití ve `for` umožňují další
-> operace: například pracovat s klíči jako s množinou.
-> V [dokumentaci](https://docs.python.org/3.0/library/stdtypes.html#dictionary-view-objects)
-> Pythonu je to všechno popsáno.
+> `keys()`, `values()` and `items()` return special objects
+> which can be used in `for` cycle (that's called that those objects are iterable)
+> and they behave as set.
+> In [documentation](https://docs.python.org/3.0/library/stdtypes.html#dictionary-view-objects)
+> is everything well written.
 
-V průběhu takového `for` cyklu nesmíš
-do slovníku přidávat záznamy, ani záznamy odebírat:
+In `for` cycle you can't add keys to dictionary nor delete them:
 
-```python
->>> for klic in popisy_funkci:
-...     del popisy_funkci[klic]
+```pycon
+>>> for key in func_descript:
+...     del func_descript[key]
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 RuntimeError: dictionary changed size during iteration
 ```
 
-Hodnoty u už existujících klíčů ale měnit můžeš.
+But you can change values for already existing keys.
 
 
-## Jak udělat slovník
+## How to create dictionary
 
-Slovník se dá vytvořit dvěma způsoby.
-První, pomocí {složených závorek}, jsme už viděl{{gnd('i', 'y', both='i')}};
-další využívají funkci `dict`.
-Ta, ve stylu `str`, `int` či `list`, převede cokoli, co jde, na slovník.
+Dictionary can be created in two ways.
+First way uses square bracket `[]`.
+The other way is by using keyword `dict`.
+This works similar to `strings`, `integer` or `list`, so it will
+convert some specific objects to a dictionary.
 
-Slovník je ovšem dost specifická struktura –
-čísla nebo typické seznamy na něj převádět nejdou.
-Můžeme ale na slovník převést *jiný slovník*.
-Nový slovník žije svým vlastním životem;
-následné změny se promítnou jen do něj.
+Dictionary has very specific structure -
+numbers or simple lists can't be converted into dictionary.
+But we can convert dictionary into *another dictionary*.
+This new dictionary won't be anyhow connected to the
+old one.
 
 ```python
-barvy_po_tydnu = dict(barvy)
-for klic in barvy_po_tydnu:
-    barvy_po_tydnu[klic] = 'černo-hnědo-' + barvy_po_tydnu[klic]
-print(barvy['jablko'])
-print(barvy_po_tydnu['jablko'])
+colour_riped = dict(colours)
+for key in colour_riped:
+    colour_riped[key] = 'blackish-brownish-' + colour_riped[key]
+print(colours['apple'])
+print(colour_riped['apple'])
 ```
 
-Druhá věc, která jde převést na slovník, je
-*sekvence dvojic* klíč/hodnota:
+We can also convert list which contains tuples with *pairs* (works as key/value) 
+into dictionary:
 
 ```python
-data = [(1, 'jedna'), (2, 'dva'), (3, 'tři')]
-nazvy_cisel = dict(data)
+data = [(1, 'one'), (2, 'two'), (3, 'three')]
+number_names = dict(data)
 ```
 
-A to je vše, co se na slovník dá převést.
+And that's all what we can convert into a dictionary.
 
-Jako bonus umí funkce `dict` ještě
-brát pojmenované argumenty.
-Každé jméno argumentu převede na řetězec,
-použije ho jako klíč, a přiřadí danou hodnotu:
+As a bonus function `dict` can also work with named arguments.
+Each argument's name will be key and argument itself will be value:
+
 
 ```python
-popisy_funkci = dict(len='délka', str='řetězec', dict='slovník')
-print(popisy_funkci['len'])
+func_descript = dict(len='length', str='string', dict='dictionary')
+print(func_descript['len'])
 ```
 
 > [note]
-> Pozor na to, že v tomhle případě musí být klíče
-> pythonní „jména“ – musí být použitelné jako jména proměnných.
-> Například takhle nejde zadat jako klíč řetězec
-> `"def"` nebo `"propan-butan"`.
-
-Pojmenované argumenty jde kombinovat s ostatními
-způsoby vytvoření `dict`.
+> Be aware of that in this case keys have to have "pythonic" names – 
+> should follow same rules as other Python's variables.
+> For example these can't be keys: `"def"`or `"propan-butan"`
 
 
-## A to je zatím ke slovníkům vše
+## And that's all for now
 
-Chceš-li mít všechny triky, které  slovníky umí,
-pěkně pohromadě, můžeš si stáhnout
-[Slovníkový tahák](https://pyvec.github.io/cheatsheets/dicts/dicts-cs.pdf).
+If you would like to know all the tricks
+about dictionaries you can look at (and also print) this
 
-Kompletní popis slovníků najdeš
-v [dokumentaci](https://docs.python.org/3.0/library/stdtypes.html#mapping-types-dict)
-Pythonu.
+[cheatsheet](https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_dictionaries.pdf).
+
+Complete description can be foind there in
+Python's [documentation](https://docs.python.org/3.0/library/stdtypes.html#mapping-types-dict).
+
