@@ -28,8 +28,7 @@ The following steps will show you how to use the black window all
 hackers use. It might look a bit scary at first but really it's 
 just a prompt waiting for commands from you.
 
-
-What is command line?
+What is the command line?
 The window, which is usually called the *command line* or *command-line interface*, 
 is a text-based application for viewing, handling, and manipulating files on your computer. 
 It’s much like Windows Explorer or Finder (Mac), but without the graphical interface. 
@@ -38,19 +37,19 @@ Other names for the command line are:
 
 How can I open it?
 
-* Windows (English): Start → write "cmd" → Command Prompt
+* Windows (English): Start → write "cmd" → Command prompt
 * Windows (older versions): Start menu → All programs → Accessories → Command prompt
 * macOS (English): Applications → Utilities → Terminal
 * Linux (KDE): Main Menu → search for Console
 * Linux (GNOME): Super → search for Terminal
 
-If you don't know what to do you can try Google, ask coach
+If you don't know what to do, you can try Google, ask the coach,
 or you can e-mail us.
 
 
-When you open command line you should see a white or black window that is waiting for your command.
-Each command will be prepended by the sign `$` or `>` (depends on your operating system) 
-and one space, but you don’t have to type it. 
+When you open the command line, you should see a white or black window that is waiting for your command.
+Each command will be prepended by the sign `$` or `>` (depending on your operating system) 
+and one space, but you don’t have to type this prompt. 
 Your computer will do it for you.
 
 
@@ -65,25 +64,25 @@ so make sure to follow the instructions for your operating system.
 
 
 > [note] Font size (Windows)
-> If your font is too small you can click on the small window icon in the up right corner
-> And you have to choose Properties where is Font tab where you can set different font size.
+> If your font is too small you can click on the small window icon in the up right corner.
+> Then choose Properties and find the Font tab where you can set a different font size.
 
 > {{ figure(
      img=static('windows-cmd-properties.png'),
      alt='Screenshot of command line window',
 ) }}
 >
-> In other OS you can try:
+> In other operating systems, you can try:
 > <kbd>Ctrl</kbd>+<kbd>+</kbd> a
 > <kbd>Ctrl</kbd>+<kbd>-</kbd> (+ Shift).
 
 
 ## First command
 
-We will start with very easy command.
+We will start with a very easy command.
 Write `whoami` (*who am I?*)
 and press <kbd>Enter</kbd>.
-And your user ID will be shown. For example on Alex computer it looks like that:
+Your user ID will be shown. For example on Alex' computer, it looks like this:
 
 {% call sidebyside() %}
 $ whoami
@@ -95,11 +94,9 @@ PCname\Alex
 
 ## Working directory
 
-Command line always works in some *directory* (also *folder*).
-We can print our working directory/current directory by commands `pwd` (Linux, MacOS)
-and `cd` (Windows). `pwd` means *print working directory* and `cd` stands for 
-*current directory*
-
+The command line always works from a *directory* (also *folder*).
+We can print our working directory (also called current directory) by using the command `pwd` (Linux, MacOS)
+or `cd` (Windows). `pwd` means *print working directory* and `cd` stands for *current directory*
 
 {% call sidebyside() %}
 $ pwd
@@ -109,9 +106,9 @@ $ pwd
 C:\Users\Alex
 {% endcall %}
 
-The current directory is usually shown before `$` or `>` but it's
+The current directory is often also displayed before `$` or `>`, but it's
 good to know this command in case that you get lost or if you have to
-work on computer that shows something different before `$`.
+work on a computer that is set to display something different before `$`.
 
 
 ## So what's in that directory?
@@ -140,13 +137,13 @@ Music
 
 ## Change current directory
 
-Current directory can be changed by the command `cd` (*change directory*) -
-for all OSs (In Windows if you don't specifies anything after `cd` command it's
-behaving as *current directory* as we said earlier)
-So after `cd` we have to write folder's name where we want to go.
+You can chnage your current directory by using the command `cd` (*change directory*) -
+for all OSs (in Windows, if you don't specify anything after `cd`, command 
+prints the *current directory* as we said earlier)
+So after `cd` we have to write the folder's name where we want to go.
 Don't forget to check if you were successful.
 
-If you have Linux or macOS be careful - those systems are case sensitive,
+If you have Linux or macOS, be careful - those systems are case sensitive,
 so `Desktop` and `desktop` are two different folders!
 
 
@@ -161,15 +158,15 @@ C:\Users\Alex\Desktop
 {% endcall %}
 
 > [note] Note for Windows users
-> If you are changing directory to a different disk (to `D:` from `C:`)
-> you have to write disk's name (`D:`) as a special command before
-> you will write `cd`
+> If you change directories to a different disk (to `D:` from `C:`)
+> you have to enter the disk's name (`D:`) as a special command before
+> you enter `cd`.
 
 ## Create directory
 
-How about creating a practice directory on your Desktop? You can do it by command `mkdir`
-(*make directory*).
-After that command write name of the folder that you want to create -
+How about creating a practice directory on your Desktop? You can do this by using the
+command `mkdir` (*make directory*).
+After that command, write the name of the folder that you want to create -
 in our case `practice`.
 
 
@@ -179,14 +176,14 @@ $ mkdir practice
 > mkdir practice
 {% endcall %}
 
-Now you can look on your Desktop or into some other graphical program
-for browsing folders and you can check if the folder was created!
+Now, look on your Desktop or into some other graphical program
+for browsing folders, and check if the folder was created!
 
 ## Task
-Try to create in your new `practice` directory subfolder `test` and check
+In your new `practice` directory, try to create a subfolder `test` and check
 if it was created.
 
-Commands `cd`, `mkdir` and `ls` or `dir` might help you
+The commands `cd`, `mkdir` and `ls` or `dir` might help you.
 
 {% filter solution %}
 {% call sidebyside() %}
@@ -207,12 +204,12 @@ test
 
 We don't want to leave a mess, so let's remove everything we did until that point.
 
-But you can't delete folder in which you already are.
-First, we need to get back to Desktop. We can't use `cd Desctop` because in current
-folder there is no Desktop.
+But you can't delete the folder in which you currently are.
+First, we need to get back to the Desktop. We can't use `cd Desctop` because in the current
+folder, there is no Desktop.
 So we have to go to the *parent directory* which contains the folder that you are
 currently in.
-Two dots stand for parent directory.
+Two dots stand for the parent directory.
 
 {% call sidebyside() %}
 $ pwd
@@ -228,22 +225,20 @@ C:\Users\Alex\Desktop\practice
 C:\Users\Alex\Desktop
 {% endcall %}
 
-Now time to delete the `practice` directory.
-For that purpose use `rm` or `rmdir`
+Now it's time to delete the `practice` directory.
+For that purpose, use `rm` or `rmdir`
 (*remove* or *remove directory*).
 
 > [warning] Warning!
-> Command line is not using Recycle Bin! Everything will be deleted for good.
-> So everytime make sure that you are deleting the right folder.
+> The command line does not have a Recycle Bin! Everything will be deleted for good.
+> Every time, make sure that you are deleting the right folder.
 
-In Unix you have to write `-rv` (minus,`r`, `v`). It's for deleting everything
-inside the folder(`r` - *recursive*) and for writing info what is the command
-doing (`v` - *verbose*)
+In Unix, you have to write `rmdir -rv` (minus,`r`, `v`). The parameter deletes everything
+(`r` - *recursive*) inside the folder, and it prints info telling you (`v` - *verbose*) 
+what the command is doing.
 
-###todo - najit, jak se anglicky rekne prepinac
-Also on Windows you have to write something for deleting everything inside
-directory. This time it is `/S` (forward slash, `S`).
-
+In Windows, you also have to add a switch to the `rm` command to delete everything inside a
+directory. Here, the switch is `/S` (forward slash, `S`).
 
 {% call sidebyside() %}
 $ pwd
@@ -290,7 +285,7 @@ There is a table of basic commands:
     <tr>
         <td><code>cp</code></td>
         <td><code>copy</code></td>
-        <td>copy file</td>
+        <td>copy a file</td>
         <td>
             <code>cp original.txt copy.txt</code>
             <br>
@@ -300,7 +295,7 @@ There is a table of basic commands:
     <tr>
         <td><code>mv</code></td>
         <td><code>move</code></td>
-        <td>move file</td>
+        <td>move a file</td>
         <td>
             <code>mv old.txt new.txt</code>
             <br>
@@ -334,13 +329,11 @@ There is a table of basic commands:
 </table>
 
 There are of course a lot more commands.
-All the programs that you have install on your laptop can be
-run from command line - usually by typing its name.
-You can now try for example - `firefox`, `notepad`, `safari`
-nebo `gedit`.
+All the programs that you have installed on your laptop can be
+run from the command line - usually by typing their names.
+Try for example - `firefox`, `notepad`, `safari`, or `gedit`.
 {% if var('coach-present') -%}
-If it's not working ask coach and they might help you to find some command that will
-work.
+If it's not working, ask your coach and they might help you to find an example command that works.
 {%- endif %}
 
 We will use commands/programs like `python` and `git` a lot. We will install them
@@ -350,15 +343,15 @@ in a while.
 
 ## Exit
 
-Now you can try one more command - the one that is closing command line window - `exit`.
-It works on all operating systems the same.
+Now you can try one more command - the one that closes the command line window - `exit`.
+It works the same in all operating systems.
 
 
 ```console
 $ exit
 ```
-We will be using `$` for Linux/macOS (in fact for Unix based OS)
-and `>` for Windows for the rest of our course.
-It's the convention in the most materials/tutorials you will find.
+We will be using `$` to indicate Linux/macOS (in fact, for Unix based OS) commands
+and `>` to indicate Windows commands for the rest of our course.
+This is the convention in most materials and tutorials you will find.
 
 
