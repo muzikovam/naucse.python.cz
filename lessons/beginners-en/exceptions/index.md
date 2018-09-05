@@ -1,110 +1,114 @@
-# Výjimky
+# Exceptions
 
-O [chybových výpisech]({{ lesson_url('beginners/print') }}) už v tomto
-kurzu byla zmínka: Python si postěžuje, řekne, kde je chyba, a ukončí program.
-O chybách se toho ale dá říct mnohem víc.
+We were already talking about [error messages]({{ lesson_url('beginners/print') }}) : 
+Python complains, tells us where is the error (line) and terminates the program.
+But there are lot more what we can learn about error messages (a.k.a *exceptions*).
 
 
-## Výpisy chyb
+## Printing errors:
 
-Na začátku si ukážeme (nebo zopakujeme), jak Python vypíše chybu, která
-nastane v zanořené funkci:
+In the beginning we will repeat how Python prints error which is in nested function.
+
 
 ```python
-def vnejsi_funkce():
-    return vnitrni_funkce(0)
+def out_func():
+    return in_func(0)
 
-def vnitrni_funkce(delitel):
-    return 1 / delitel
+def in_func(divisor):
+    return 1 / divisor
 
-print(vnejsi_funkce())
+print(out_func())
 ```
 
 <!-- XXX: Highlight the line numbers -->
 
 ```pycon
 Traceback (most recent call last):          
-  File "/tmp/ukazka.py", line 7, in <module>
-    print(vnejsi_funkce())
-  File "/tmp/ukazka.py", line 2, in vnejsi_funkce
-    return vnitrni_funkce(0)
-  File "/tmp/ukazka.py", line 5, in vnitrni_funkce
-    return 1 / delitel
+  File "/tmp/example.py", line 7, in <module>
+    print(out_func())
+  File "/tmp/example.py", line 2, in out_func
+    return in_func(0)
+  File "/tmp/example.py", line 5, in in_func
+    return 1 / divisor
 ZeroDivisionError: division by zero
 ```
 
-Všimni si, že každá funkce, jejíž volání vedlo k chybě, je uvedena ve výpisu.
-Skutečná chyba (tedy místo, které musíme opravit)
-je pravděpodobně poblíž některého z těchto volání.
-V našem případě bychom asi neměl{{gnd('i', 'y', both='i')}} volat
-`vnitrni_funkce` s argumentem `0`.
-A nebo by `vnitrni_funkce` měla být na nulu
-připravená a dělat v tomto případě něco jiného.
+You can notice that every function calling that led to error is written there.
+The actuall error is probably somewhere around that function calling.
+In our case it's easy. We should't call `in_func` with argument `0`.
+Or this `in_function` should be prepared that the divisor can be `0`
+and it should do something else than try to devide by zero.
 
-Python nemůže vědět, na kterém místě by se chyba měla opravit, a tak ukáže vše.
-Ve složitějších programech se to bude hodit.
+Python can't know where is the error that should repaired so it shows
+you everything in error message.
+It will be very useful in more difficult programs.
 
 
-## Vyvolání chyby
+## Raising rror
 
-Chybu neboli *výjimku* (angl. *exception*) můžeš vyvolat i {{gnd('sám', 'sama')}},
-pomocí příkazu `raise`.
-Za příkaz dáš jméno výjimky a pak do závorek nějaký popis toho, co je špatně.
+Error or more precisely *exception* could be also invoked by command `raise`.
+After that command there have to be the name of the exception and then you write some 
+information about what went wrong into brackets.
+
 
 ```python
-VELIKOST_POLE = 20
+LIST_SIZE = 20
 
-def over_cislo(cislo):
-    if 0 <= cislo < VELIKOST_POLE:
+def verify_number(number):
+    if 0 <= number < LIST_SIZE:
         print('OK!')
     else:
-        raise ValueError('Čislo {n} není v poli!'.format(n=cislo))
+        raise ValueError('The number {n} is not in the list!'.format(n=number))
 ```
 
-Všechny typy výjimek, které jsou zabudované
-v Pythonu, jsou popsané [v dokumentaci](https://docs.python.org/3.2/library/exceptions.html#exception-hierarchy).
+All types of built-in exceptions are
+[here](https://docs.python.org/3/library/exceptions.html) including their hierarchy.
 
-Pro nás jsou (nebo budou) důležité tyto:
+Those are important to us now:
 
 ```plain
 BaseException
- ├── SystemExit                     vyvolána funkcí exit()
- ├── KeyboardInterrupt              vyvolána po stisknutí Ctrl+C
+ ├── SystemExit                     raised by function exit()
+ ├── KeyboardInterrupt              raised after pressind Ctrl+C
  ╰── Exception
       ├── ArithmeticError
-      │    ╰── ZeroDivisionError    dělení nulou
-      ├── AssertionError            nepovedený příkaz `assert`
-      ├── AttributeError            neexistující atribut, např. 'abc'.len
-      ├── ImportError               nepovedený import
+      │    ╰── ZeroDivisionError    zero division
+      ├── AssertionError            command `assert` failed
+      ├── AttributeError            non-existing attribute, e.g. 'abc'.len
+      ├── ImportError               failed import
       ├── LookupError
-      │    ╰── IndexError           neexistující index, např. 'abc'[999]
-      ├── NameError                 použití neexistujícího jména proměnné
-      │    ╰── UnboundLocalError    použití proměnné, která ještě nebyla nastavená
-      ├── SyntaxError               špatná syntaxe – program je nečitelný/nepoužitelný
-      │    ╰── IndentationError     špatné odsazení
-      │         ╰── TabError        kombinování mezer a tabulátorů
-      ├── TypeError                 špatný typ, např. len(9)
-      ╰── ValueError                špatná hodnota, např. int('xyz')
+      │    ╰── IndexError           non-existing index, e.g. 'abc'[999]
+      ├── NameError                 used non-existing name of variable
+      │    ╰── UnboundLocalError    used variable, which wasn't initiated
+      ├── SyntaxError               wrong syntax – program is unreadable/unusable
+      │    ╰── IndentationError     wrong indentation
+      │         ╰── TabError        combination of tabs and spaces
+      ├── TypeError                 wrong type, e.g. len(9)
+      ╰── ValueError                wrong value, e.g. int('xyz')
 ```
 
 
-## Ošetření chyby
+## Handling Exceptions
 
-A proč jich je tolik druhů?
-Abys je mohl{{a}} chytat!
-Následující funkce je připravená na to, že
-funkce `int` může selhat, pokud uživatel nezadá číslo:
+And why are there so many?
+So you can cath them! :)
+In the following function the `int` function can 
+fail when there is something else than
+number given to it. So it needs to be prepared for
+that kind of situation.
 
 ```python
-def nacti_cislo():
-    odpoved = input('Zadej číslo: ')
+def load_number():
+    answer = input('Enter some number: ')
     try:
-        cislo = int(odpoved)
+        number = int(answer)
     except ValueError:
-        print('To nebylo číslo! Pokračuji s nulou.')
-        cislo = 0
-    return cislo
+        print('That wasn\'t a number! I will continue with 0')
+        number = 0
+    return number
 ```
+
+How does that work?
 
 Jak to funguje?
 Příkazy v bloku uvozeném příkazem `try` se normálně provádějí, ale když

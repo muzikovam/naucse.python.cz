@@ -202,9 +202,7 @@ print(func_descript['len'])
 ## And that's all for now
 
 If you would like to know all the tricks
-about dictionaries you can look at (and also print) this
-
-[cheatsheet](https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_dictionaries.pdf).
+about dictionaries you can look at (and also print) this [cheatsheet](https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_dictionaries.pdf).
 
 Complete description can be foind there in
 Python's [documentation](https://docs.python.org/3.0/library/stdtypes.html#mapping-types-dict).
