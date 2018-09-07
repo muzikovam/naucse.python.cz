@@ -44,7 +44,7 @@ you everything in error message.
 It will be very useful in more difficult programs.
 
 
-## Raising rror
+## Raising error
 
 Error or more precisely *exception* could be also invoked by command `raise`.
 After that command there have to be the name of the exception and then you write some 
@@ -91,11 +91,13 @@ BaseException
 ## Handling Exceptions
 
 And why are there so many?
-So you can cath them! :)
+So you can catch them! :)
 In the following function the `int` function can 
 fail when there is something else than
 number given to it. So it needs to be prepared for
-that kind of situation.
+that kind of situation with `try/except` block (you can also
+see this named `try/catch` block - mostly in different
+programming languages).
 
 ```python
 def load_number():
@@ -103,137 +105,144 @@ def load_number():
     try:
         number = int(answer)
     except ValueError:
-        print('That wasn\'t a number! I will continue with 0')
+        print('That was not a number! I will continue with 0')
         number = 0
     return number
 ```
 
-How does that work?
+So how does that work?
+Commands within the block `try` will be run but when there is error
+which you named after `except` Python won't terminate the program it will
+run all the commands in the exception block.
+When there won't be any error the except block will be skipped.
 
-Jak to funguje?
-Příkazy v bloku uvozeném příkazem `try` se normálně provádějí, ale když
-nastane uvedená výjimka, Python místo ukončení programu provede
-všechno v bloku `except`.
-Když výjimka nenastane, blok `except` se přeskočí.
-
-Když odchytáváš obecnou výjimku,
-chytnou se i všechny podřízené typy výjimek –
-například `except ArithmeticError:` zachytí i `ZeroDivisionError`.
-A `except Exception:` zachytí všechny
-výjimky, které běžně chceš zachytit.
+When you are catching a general exception there will be
+catched also exceptions that are related to it (in the diagram they are underneath) - 
+e.g. `except ArithmeticError:` will catch also `ZeroDivisionError`.
+And `except Exception:` will catch all ussual exceptions.
 
 
-## Nechytej je všechny!
+## Don't catch'em all!
 
-Většinu chyb ale není potřeba ošetřovat.
+There is no need to catch most of the errors.
 
-Nastane-li nečekaná situace, je téměř vždy
-*mnohem* lepší program ukončit, než se snažit
-pokračovat dál počítat se špatnými hodnotami.
-Navíc chybový výstup, který Python standardně
-připraví, může hodně ulehčit hledání chyby.
+If any error, that you don't expect, happens 
+it's always *much* better to terminate the program
+than continue with wrong values.
+In addition Python's standard error output will
+really easy you to find the error.
 
-„Ošetřování” chyb jako `KeyboardInterrupt`
-je ještě horší: může způsobit, že program nepůjde
-ukončit, když bude potřeba.
+For example catching exception `KeyboardInterrupt`
+could cause that program couldn't be terminated if we would need it
+(with shortcut <kbd>Ctrl</kbd>+<kbd>C</kbd>).
 
-Příkaz `try/except` proto používej
-jen v situacích, kdy výjimku očekáváš – víš přesně, která chyba může
-nastat a proč, a máš možnost ji opravit.
-Pro nás to typicky bude načítání vstupu od uživatele.
-Po špatném pokusu o zadání je dobré se ptát znovu, dokud uživatel nezadá
-něco smysluplného:
+Use command `try/except`only in situations when you
+expect some exception - you know exactly what could happen
+and why and you have the option to correct it - in
+except block.
+Typical example with input from user. When user will 
+enter some gibberish it is better to ask again until
+user enters something meaningful:
 
-```python
-def nacti_cislo():
-    while True:
-        odpoved = input('Zadej číslo: ')
-        try:
-            return int(odpoved)
-        except ValueError:
-            print('To nebylo číslo! Zkus to znovu.')
+
+```pycon
+>>> def retrieve_number():
+...     while True:
+...             answer = input("Type a number: ")
+...             try:
+...                     return int(answer)
+...             except ValueError:
+...                     print("This is not a number. Try again")
+
+>>> print(retrieve_number())
+Type a number: twenty
+This is not a number. Try again
+Type a number: 20
+20
+
 ```
 
 
-## Další přílohy k `try`
+## Another clauses
 
-Kromě `except` existují dva jiné bloky,
-které můžeš „přilepit“ k `try`, a to `else` a `finally`.
-První se provede, když v `try` bloku
-žádná chyba nenastane; druhý se provede vždy – ať
-už chyba nastala nebo ne.
+Apart from `except` there are two more clauses - blocks that can 
+be used with `try` and those are `else` and `finally`.
+The first one will be run if exception in `try` block won't happen.
+And `finally` will run every time.
 
-Můžeš taky použít více bloků `except`. Provede se vždy maximálně jeden:
-ten první, který danou chybu umí ošetřit.
+You can also have more `except` block. There will be triggered only one - 
+the first one that can handle the raised exception. 
+
 
 ```python
 try:
-    neco_udelej()
+    do_something()
 except ValueError:
-    print('Tohle se provede, pokud nastane ValueError')
+    print('This will be printed when there will be ValueError.')
 except NameError:
-    print('Tohle se provede, pokud nastane NameError')
+    print('This will be printed when there will be NameError.')
 except Exception:
-    print('Tohle se provede, pokud nastane jiná chyba')
-    # (kromě SystemExit a KeyboardInterrupt, ty chytat nechceme)
+    print('This will be printed when there will be some other exception.')
+    # (apart from SystemExit a KeyboardInterrupt, we don't want to catch those)
 except TypeError:
-    print('Tohle se neprovede nikdy')
-    # ("except Exception" výše ošetřuje i TypeError; sem se Python nedostane)
+    print('This will never be printed')
+    # ("except Exception" above already caught TypeError)
 else:
-    print('Tohle se provede, pokud chyba nenastane')
+    print('This will be printed when there will not be any error in try block')
 finally:
-    print('Tohle se provede vždycky; i pokud v `try` bloku byl např. `return`')
+    print('This will be printed always; even if there would be e.g. `return` in the `try` block.')
 ```
 
 
-## Úkol
+## Task
 
-Doplň do geometrické kalkulačky (nebo 1-D piškvorek, máš-li je) ošetření chyby,
-která nastane když uživatel nezadá číslo.
+Add to our calculator (or to 1-D ticktactoe if you have it) exception 
+handeling if user won't enter number in the input.
+
 
 {% filter solution %}
 
-Možné řešení pro geometrickou kalkulačku:
+Possible solution for the calculator:
 
 ```python
 
 while True:
     try:
-        strana = float(input('Zadej stranu čtverce v centimetrech: '))
+        side = float(input('Enter the side of a square in centimeters: '))
     except ValueError:
-        print('To nebylo číslo!')
+        print('That was not a number!')
     else:
-        if strana <= 0:
-            print('To nedává smysl!')
+        if side <= 0:
+            print('That does not make sense!')
         else:
             break
 
-print('Obvod čtverce se stranou', strana, 'je', 4 * strana, 'cm')
-print('Obsah čtverce se stranou', strana, 'je', strana * strana, 'cm2')
+print("The perimeter of a square with a side of", side,"cm is ", side * 4,"cm.")
+print("The area of a square with a side of", side,"cm is", side * side, "cm2.")
 
 ```
 
-Možné řešení pro 1-D piškvorky:
+Possible solution for 1-D ticktactoe:
 
 ```python
-def nacti_cislo(pole):
+def load_number(field):
     while True:
         try:
-            pozice = int(input('Kam chceš hrát? (0..19) '))
+            position = int(input('Which position do you want to fill? (0..19) '))
         except ValueError:
-            print('To není číslo!')
+            print('This is not a number!')
         else:
-            if pozice < 0 or pozice >= len(pole):
-                print('Nemůžeš hrát venku z pole!')
-            elif pole[pozice] != '-':
-                print('Tam není volno!')
+            if position < 0 or position >= len(field):
+                print('You can not play out of field!')
+            elif field[position] != '-':
+                print('That position is not free!')
             else:
                 break
 
-    pole = pole[:pozice] + 'o' + pole[pozice + 1:]
-    return pole
+    field = field[:position] + 'o' + field[position + 1:]
+    return field
 
 
-print(tah_hrace('-x----'))
+print(player_move('-x----'))
 ```
 {% endfilter %}
