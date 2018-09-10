@@ -66,14 +66,11 @@ so make sure to follow the instructions for your operating system.
 > [note] Font size (Windows)
 > If your font is too small you can click on the small window icon in the up right corner.
 > Then choose Properties and find the Font tab where you can set a different font size.
-
-> {{ figure(
-     img=static('windows-cmd-properties.png'),
-     alt='Screenshot of command line window',
-) }}
+>
+> {{ figure( img=static('windows-cmd-properties.png'), alt='Screenshot of command line window', ) }}
 >
 > In other operating systems, you can try:
-> <kbd>Ctrl</kbd>+<kbd>+</kbd> a
+> <kbd>Ctrl</kbd>+<kbd>+</kbd> and
 > <kbd>Ctrl</kbd>+<kbd>-</kbd> (+ Shift).
 
 

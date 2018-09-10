@@ -1,20 +1,12 @@
-{% if var('pyladies') %}
 
-> [note] Pro kouče
-> Slajdy jsou k dispozici na stránkách
-> [PyLadies](http://pyladies.cz/v1/s003-looping/functions.html#/).
 
-Pokud jsi minule udělal{{a}} projekt navíc, tak jsi nejspíš
-do programu zadal{{a}} hotnotu čísla π.
-{% else %}
-Pokud jsi v minulých lekcíh pracoval{{a}} s kruhy, tak jsi nejspíš
-do programu zadal{{a}} hotnotu čísla π.
-{% endif %}
+If you would try to do some calculations with the number π (pi), how would you write it?
+3.14159265 ?
 
-Python má ale spoustu vychytávek zabudovaných – není třeba je přímo psát,
-stačí jen vědět, kam se podívat.
+However, Python has a lot of built-in features, so you don’t have to rewrite them
+you just have to know where to look.<br>
+We can access *π* by importing the `math` module.
 
-*Pí* můžeme zpřístupnit *importem* z modulu `math`.
 
 ```python
 from math import pi
@@ -22,33 +14,28 @@ from math import pi
 print(pi)
 ```
 
-Jak je vidět, π je tak trochu schované.
-Přece jen, `print` nebo `if` potřebují všichni, ale ne všichni mají
-rádi matematiku…
-
-Teď ale u matematiky ještě chvilku zůstaneme.
+As you can see, π is a bit hidden. Comparing to `print` or `if` which everyone needs, 
+not everyone needs `math`. Let's stick with this module for a bit longer.
 
 
-## Výrazy
+## Expressions
 
-V matematice máme spoustu různých operací,
-které se zapisují symboly – třeba plus a minus.
-Stejné symboly používá i Python:
+In mathematics we have a lot of different operations that are implemented as 
+symbols, like + or -. The same symbols are used in Python.
 
 * 3 + 4
 * <var>a</var> - <var>b</var>
 
-S násobením a dělením už je to složitější,
-matematický zápis se na běžné klávesnici nedá napsat:
+It's a bit difficult with multiplying and dividing
+because you can't write the usual mathematical expression
+on keyboard:
 
 * 3 · 4
 * ¾
 
-V Pythonu si ale pořád vystačíme s operátorem.
+Mathematicians were inventing more and more complex symbols 
+that cannot be just as easily replicated by programmers:
 
-Matematici ovšem psali na papír,
-a tak vymýšleli stále nezapsatelnější klikyháky,
-které se programátorům nechtělo přepisovat:
 
 * <var>x</var>²
 * <var>x</var> ≤ <var>y</var>
@@ -59,23 +46,22 @@ které se programátorům nechtělo přepisovat:
 * <var>a</var> ★ <var>b</var>
 * <var>a</var> ⨁ <var>b</var>
 
-Ne že by neexistovaly programovací jazyky,
-na které je potřeba speciální klávesnice.
-Ale programy v nich se většinou nedají
-dost dobře psát, ani číst.
+There are also programming languages that needs
+special keyboard. But their programs can't be easily 
+written and they aren't readable.
 
 > [note]
-> Třeba tady je program v jazyce APL:
+> For example this is program written in language APL:
 >
 > <!--z http://catpad.net/michael/apl/ -->
 >
 >     ⍎’⎕’,∈Nρ⊂S←’←⎕←(3=T)∨M∧2=T←⊃+/(V⌽”⊂M),(V⊖”⊂M),(V,⌽V)⌽”(V,V←1¯1)⊖”⊂M’
 
 
-V Pythonu je operátorů poměrně málo.
-Už z nich známe skoro půlku!
-A i tak některé místo symbolů používají slova.
-Tady jsou všechny Pythonní operátory:
+There are relatively a few operators in Python.
+And we already know almost half of them!
+Some operators are words.
+There are all of them:
 
 <div>
     <code>==</code> <code>!=</code>
@@ -102,128 +88,125 @@ Tady jsou všechny Pythonní operátory:
     <code class="muted">is</code> <code class="muted">is not</code>
 </div>
 
-Je asi jasné, že většina operací,
-které v programu budeme chtít udělat,
-se nedá vyjádřit operátorem.
+It is clear now that some operations that we want to do in the program 
+cannot be expressed by the operators.
 
 
-Co s tím?
+How to deal with that?
 
-Jeden z matematických zápisů, které jsem před chvilkou ukázal,
-používá pro operace jména.
+One of the way which we already mentioned is to define operation in words.
 
 * <var>x</var> = sin <var>a</var>
 
-A to jde napsat na klávesnici!
-Python jenom přidá závorky,
-aby bylo jasnější, k čemu se operace vztahuje:
+And we can write that on our keyboards!
+We just have to add parentheses (some editors will do it for us) to make it 
+clear to whom the operation applies:
 
 ```python
 x = sin(a)
 ```
 
-Ten `sin` musíš *naimportovat*,
-jako předtím *pí*
-(přece jen, ne všichni mají rádi matematiku).
-Takže celý program vypadá následovně:
+But first of all you have to *import* `sin`,
+same way as you already imported `pi`.
+So the whole program will look like this:
 
 ```python
 from math import sin
 
-x = sin(1)  # (v radiánech)
+x = sin(1)  # (in radian)
 print(x)
 ```
 
-> [warning] Import a pojmenování souborů
-> Při importování je potřeba si dávat pozor na pojmenování souborů:
-> importuješ-li `from math`, nesmí se tvůj program jmenovat `math.py`.
+> [warning] Import and files names
+> When we want to import some module we have to pay extra attention
+> when we are naming our files with programs.
+> If you are importing in your program module `math` your file can't
+> have name `math.py`.
 >
-> Proč? Když Python v adresáři, ze kterého program pouštíš, najde soubor
-> `math.py`, bude se snažit importovat `sin` z něho místo
-> z předpřipravené sady matematických funkcí.
+> Why? Because if you are importing some module Python will look firstly
+> into the folder from which you are running the program.
+> It will find the `math.py` and will try to import `sin` function from there.
+> And of course it won't find it.
 
-## Volání funkcí
 
-Funkci voláme *jménem*.
+## Call functions
 
-Je to jméno jako u proměnných – vlastně to *je* proměnná,
-jen je v ní, místo čísla nebo řetězce, funkce.
+We call the function by its *name*.
 
-Za jméno funkce patří závorky,
-do nichž uzavřeme *argument* (neboli *vstup*) funkce.
-To je informace, se kterou bude naše funkce
-pracovat – třeba `sin()` ze svého argumentu vypočítá <em>sinus</em>.
+The name looks like a variable – actually it *is* a variable, 
+only difference is that instead of a number or a string, we have a function stored inside.
 
-Volání funkce je *výraz* a výsledná, neboli *návratová*, hodnota
-(angl. *return value*) se dá třeba přiřadit do proměnné.
+After the name of the function we have parentheses where we enclose the *argument* 
+(or *input*) for the function. This is the information which our function will work with.
+In our example, `sin()` will calculate the <em>sine</em>
+
+The *return value* of a function is value that can be
+signed to a variable.
+
 
 ```
-        jméno funkce
+        function name
                  │
                 ╭┴╮
             x = sin(1)
             ▲      ╰┬╯
             │     argument
             │
-            ╰── návratová hodnota
+            ╰── return value 
 ```
 
-Nebo se dá použít místo čísla v součtu:
+Or we can use it in other operations:
 
 ```python
 a = sin(1) + cos(2)
 ```
 
-Nebo v podmínce ifu:
+Or we can use it in an `if` condition:
 
 ```python
 if sin(1) < 3:
 ```
 
-Nebo dokonce jako argument jiné funkce:
+Or even use it as an input for a different function:
 
 ```python
 print(sin(1))
 ```
 
-… a podobně.
+… etc.
 
 
-### Argumenty
+### Arguments
 
-Některým funkcím můžeme předat i více argumentů.
-Třeba funkci `print`, která všechny své argumenty vypíše na řádek.
-Jednotlivé argumenty oddělujeme čárkami:
+To some functions we can pass multiple arguments. For example, `print`, 
+which prints all its arguments consecutively. We separate the arguments by comma:
 
 ```python
 print(1, 2, 3)
 ```
 
 ```python
-print("Jedna plus dva je", 1 + 2)
+print("One plus two equals", 1 + 2)
 ```
-
-Některé funkce nepotřebují žádný argument.
-Příkladem je zase `print`.
-Je ale nutné napsat závorky – i když jsou prázdné.
-Hádej, co tohle volání udělá?
+Some functions do not need any argument. 
+It can be also `print`, but we still have to write the parentheses, even if they are empty.
+Guess what `print` without arguments will do?
 
 ```python
 print()
 ```
 
 {% filter solution %}
-Funkce `print` zavolaná bez argumentů napíše prázdný řádek.
+Function `print` without arguments will print empty line.
 
-(Je to přesně podle definice – funkce `print` všechny své argumenty vypíše
-na řádek.)
+It's exactly by the definition - function `print` will write all
+its argument on a line.
 {% endfilter %}
 
-### Funkce je potřeba volat
+### Functions have to be called
 
-Pozor na to, že když nenapíšeš závorky, funkce se nezavolá!
-(Nedostaneš návratovou hodnotu, ale samotnou funkci.)
-Zkus si, co dělají tyhle příklady, abys pak podobné chyby poznala:
+Be careful to write the parentheses, otherwise, the function is not called. 
+You will not get the return value, but the function itself! Let’s try the following examples:
 
 ```python
 from math import sin
@@ -232,18 +215,18 @@ print(sin)
 print(sin + 1)
 ```
 
-### Pojmenované argumenty
+### Named arguments
 
-Některé funkce umí pracovat i s *pojmenovanými* argumenty.
-Píšou se podobně jako přiřazení do proměnné,
-s rovnítkem, ale uvnitř závorek.
+Some functions can also work with *named* arguments. 
+They are written similarly to the assignment of a variable, with an equal, 
+but inside the parentheses:
 
-Třeba funkce `print` normálně ukončí výpis novým řádkem,
-ale pomocí argumentu `end` se dá vypsat i něco jiného.
+For example function `print` ends with printing new line at the end of a line by default,
+but we can rewrtite it by named argument `end` and print something else.
 
 > [note]
-> Tenhle příklad je potřeba napsat do souboru; v interaktivní konzoli
-> nebude výstup vypadat jak má.
+> We have to write this into .py file because we won't
+> be able to see it properly in the interactive console.
 
 ```python
 print('1 + 2', end=' ')
@@ -252,56 +235,60 @@ print(1 + 2, end='!')
 print()
 ```
 
-## Užitečné funkce
+## Useful functions
 
-Nakonec si ukážeme pár základních funkcí, které nám Python nabízí.
-Můžeš si stáhnout i
-<a href="https://github.com/encukou/cheatsheets/raw/master/basic-functions/basic-functions-cs.pdf">přehled</a>,
-který se rozdává na srazech.
+In the end we will look at some basic functions which are built-in.
+You can also download 
+<a href="https://github.com/muzikovam/cheatsheets/blob/master/basic-functions/basic-functions-en.pdf">cheatsheet</a>.
 
-### Vstup a výstup
 
-Tyhle funkce už známe.
-`print` vypíše nepojmenované argumenty, oddělené mezerou.
-Pojmenovaný argument `end` určuje, co se vypíše na konci (místo přechodu
-na nový řádek);
-`sep` zase, co se vypíše mezi jednotlivými argumenty (místo mezery).
+### Input and output
+
+We already know these functions.
+`print` writes non-named arguments separated by space into the output.
+It will  write named argument `end` in the end of a line (default is newline).
+And another named argument `sep` defines what will be written between each argument (default is space).
+
 
 > [note]
-> Příklad opět doporučuji spustit ze souboru, ne
-> interaktivně:
+> We recommend to run following example
+> from the file, not from Python console.
 
 ```python
-print(1, "dvě", False)
+print(1, "two", False)
 print(1, end=" ")
 print(2, 3, 4, sep=", ")
 ```
 
-Základní funkce na výstup, `input`,
-vypíše otázku, načte vstup od uživatele
-a vrátí ho jako řetězec.
+Basic function for input is obviously `input`.
+It will print the question (or whatever you type in)
+and collect the input from the user and return it
+as a string.
 
 ```python
-input('zadej vstup: ')
+input('Enter input: ')
 ```
 
-### Převádění typů
+### Type conversion (type casting)
 
+In case we don’t want to work just with strings, here is a group of 
+functions that can convert strings to numbers and back.
+But what to do when we don't won't to work with a string but for example with a number?
+With that will help a group of functions that can convert strings to numbers and back.
+Each from three <em>types</em> of variables that we currently know
+has function which takes some value (as an argument) and returns it as a
+value its own type. 
+For *integers* there is function `int()`, for *floating points* there is
+`float` and for *strings* there is `str()`.
 
-Co ale když nechceme pracovat s řetězcem, ale třeba s číslem?
-Tady nám pomůže skupina funkcí, které umí převádět čísla na řetězce a zpátky.
-Každý ze tří <em>typů</em> (angl. <em>types</em>) proměnných, které zatím známe,
-má funkci, která vezme nějakou hodnotu a vrátí podobnou hodnotu „svého“ typu.
-Na celá čísla je funkce `int` (z angl. *integer*), na reálná čísla je `float`
-(z angl. *floating-point*), a pro řetězce `str` (z angl. *string*).
 
 ```python
-int(x)              # převod na celé číslo
-float(x)            # převod na reálné číslo
-str(x)              # převod na řetězec
+int(x)              # conversion to integer
+float(x)            # conversion to real number
+str(x)              # conversion to string
 ```
 
-Příklady:
+Examples:
 
 ```python
 3 == int('3') == int(3.0) == int(3.141) == int(3)
@@ -310,70 +297,64 @@ Příklady:
 '3' == str(3) == str('3')
 '3.141' == str(3.141) == str('3.141')
 ```
-Ne všechny převody jsou možné:
+But not all conversions are possible:
 
 ```python
-int('blablabla')    # chyba!
-float('blablabla')  # chyba!
-int('8.9')          # chyba!
+int('blablabla')    # error!
+float('blablabla')  # error!
+int('8.9')          # error!
 ```
 
-…a jak si poradit s chybou, která nastane,
-když použiješ špatnou hodnotu, si řekneme později.
-{%- if var('pyladies') %}
-Teď je hlavní to, že už víš, jak funguje
-`int(input('zadej číslo: '))` z minula!
-{% endif %}
+We will tell you how to deal with errors some other time.
 
 
-### Matematické funkce
+### Mathematical functions
 
-Matematika je občas potřeba, takže se pojďme
-podívat, jak v Pythonu pracovat s čísly.
+Maths is sometimes useful so let's have a look how to work 
+with numbers in Python :)
 
-Jedna zajímavá matematická funkce je k dispozici vždy:
+There is one mathematical function which is always available:
 
 ```python
-round(cislo)    # zaokrouhlení
+round(number)    # rounding
 ```
 
-Spousta dalších se dá importovat z modulu `math`:
+Lots of others are imported from the `math` module:
 
 ```python
 from math import sin, cos, tan, sqrt, floor, ceil
 
-sin(uhel)       # sinus
-cos(uhel)       # kosinus
-tan(uhel)       # tangens
-sqrt(cislo)     # druhá odmocnina
+sin(angle)       # sine
+cos(angle)       # cosine
+tan(angle)       # tangent
+sqrt(number)     # square root
 
-floor(cislo)    # zaokrouhlení dolů
-ceil(cislo)     # zaokrouhlení nahoru
+floor(angle)    # rounding down
+ceil(angle)     # zaokrouhlení nahoru
 ```
 
-### Nápověda
+### Help
 
-Další funkce pomáhá programátorům:
-Můžeš si přímo z programu (nebo z interaktivního
-režimu) vyvolat nápovědu k nějaké funkci.
-(Občas bývá srozumitelná i pro začátečníky,
-občas bohužel spíš ne – v takovém případě zkus
-Google).
+There are some more functions that are helping programmers:
+You can get help regarding a specific function from program 
+itself (or Python console) by using the help function.
+It's sometimes usual even for beginners, but if
+not - use Google.
 
-Nápověda se zobrazí podle systému buď v prohlížeči,
-nebo přímo v terminálu.
-Když je nápověda v terminálu příliš dlouhá, dá se v ní
-pohybovat (<kbd>↑</kbd>, <kbd>↓</kbd>,
-<kbd>PgUp</kbd>, <kbd>PgDn</kbd>) a „ven“
-se dostaneš klávesou <kbd>Q</kbd> (od *Quit*).
+Help will be shown, regarding operating system,
+either in browser or right in terminal.
+If the help is too long for the terminal you can move pages there by
+ (<kbd>↑</kbd>, <kbd>↓</kbd>,
+<kbd>PgUp</kbd>, <kbd>PgDn</kbd>) and you can get "out" with
+key <kbd>Q</kbd> (like *Quit*).
 
-Nápověda k funkci <code>print</code> se zobrazí příkazem:
+You can get help for <code>print</code> like that:
 
 ```python
 help(print)
 ```
 
-Nápověda se dá vypsat i k celému modulu.
+You can also get help to the whole module:.
 
 ```python
 import math
@@ -381,46 +362,44 @@ import math
 help(math)
 ```
 
-### Náhoda
+### Random
 
-Nakonec si ukážeme dvě funkce z modulu
-`random`, které jsou velice
-užitečné pro hry.
+Last but not least we will look on two functions from
+`random` which are very useful for games.
 
 ```python
 from random import randrange, uniform
 
-randrange(a, b)   # náhodné celé číslo od a do b-1
-uniform(a, b)     # náhodné „desetinné“ číslo od a do b
+randrange(a, b)   # random integer from a to b-1
+uniform(a, b)     # random float from a to b
 ```
 
-Pozor na to, že <code>randrange(a, b)</code>
-nikdy nevrátí samotné <code>b</code>.
-Pokud potřebujeme náhodně vybrat ze tří možností,
-použij <code>randrange(0, 3)</code>,
-což vrátí <code>0</code>, <code>1</code>, nebo
+Beware that the <code>randrange(a, b)</code> never returns <code>b</code>. 
+If we need to randomly choose between 3 options, use <code>randrange(0,3)</code> 
+which returns <code>0</code>, <code>1</code>, nebo
 <code>2</code>:
+
 
 ```python
 from random import randrange
 
-cislo = randrange(0, 3)  # číslo je od 0, 1, nebo 2
-if cislo == 0:
-    print('Kolečko')
-elif cislo == 1:
-    print('Čtvereček')
+number = randrange(0, 3)  # number - 0, 1, or 2
+if number == 0:
+    print('Circle')
+elif number == 1:
+    print('Square')
 else:  # 2
-    print('Trojúhelníček')
+    print('Triangle')
 ```
 
 > [note]
-> Pamatuj, když importuješ z modulu `random`, nesmí se tvůj soubor
-> jmenovat `random.py`.
+> Remember that when you are importing `random` module you can't 
+> name your file `random.py`.
 
-### A další
-Python dává k dispozici obrovské množství dalších
-funkcí a modulů, i když ne všem budeš ze začátku
-rozumět.
-Všechny jsou – anglicky – popsány v dokumentaci Pythonu, např.
-<a href="https://docs.python.org/3/library/functions.html">vestavěné funkce</a>,
-<a href="https://docs.python.org/3/library/math.html">matematika</a>.
+
+### And more...
+There are a lot more functions within Python itself,
+although you probably won't understand them from the beginning.
+All of them are in Python documentation, e.g.:
+<a href="https://docs.python.org/3/library/functions.html">built-in</a>,
+<a href="https://docs.python.org/3/library/math.html">maths</a>.

@@ -42,7 +42,7 @@ plan:
     url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_if_while.pdf
     type: cheatsheet
   - title: Useful built-in functions
-    url: https://github.com/muzikovam/cheatsheets/blob/master/basic-functions/basic-functions-eng.pdf
+    url: https://github.com/muzikovam/cheatsheets/blob/master/basic-functions/basic-functions-en.pdf
     type: cheatsheet
 - title: Git
   slug: git
@@ -62,7 +62,7 @@ plan:
     url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_functions.pdf
     type: cheatsheet
   - title: Strings cheatsheet
-    url: https://github.com/muzikovam/cheatsheets/blob/master/strings/strings-eng.pdf
+    url: https://github.com/muzikovam/cheatsheets/blob/master/strings/strings-en.pdf
     type: cheatsheet
 
 
@@ -106,7 +106,7 @@ plan:
     type: link
     url: http://pyladies.cz/v1/s012-pyglet/pong.py
   - title: Pyglet cheatsheet
-    url: https://github.com/muzikovam/cheatsheets/blob/master/pyglet/pyglet-basics-eng.pdf
+    url: https://github.com/muzikovam/cheatsheets/blob/master/pyglet/pyglet-basics-en.pdf
     type: cheatsheet
 
 - title: Dictionaries
@@ -133,8 +133,8 @@ plan:
   materials:
   - lesson: beginners-en/asteroids
   - title: Sets
-    url: https://github.com/muzikovam/cheatsheets/blob/master/sets/sets-eng.pdf
+    url: https://github.com/muzikovam/cheatsheets/blob/master/sets/sets-en.pdf
     type: cheatsheet
   - title: Physics and geometry for 2D games cheatsheet
-    url: https://github.com/muzikovam/cheatsheets/blob/master/game-physics/game-physics-eng.pdf
+    url: https://github.com/muzikovam/cheatsheets/blob/master/game-physics/game-physics-en.pdf
     type: cheatsheet
