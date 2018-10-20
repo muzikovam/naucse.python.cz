@@ -16,9 +16,9 @@ that your team members will synchronize with.
 > (Otherwise, keep reading. You can do this.)
 
 > [note] For mentors
-> Create a GitHub repository called `prezencka`. Add a new file
+> Create a GitHub repository called `attendance`. Add a new file
 > with your name to the repository. See an example here:
-> [encukou/prezencka](https://github.com/encukou/prezencka).
+> [encukou/attendance](https://github.com/encukou/attendance).
 > Share the command to clone your repository using https with other attendees.
 
 
@@ -128,11 +128,11 @@ Pro začátek zkusíme práci s repozitářem, který už vytvořil někdo jin�
 V příkazové řádce zadej příkaz, který ti oznámí kouč; něco jako
 
 ```console
-$ git clone https://github.com/{{coach_username}}/prezencka
+$ git clone https://github.com/{{coach_username}}/attendance
 ```
 
 Vytvoří se ti nový repozitář – adresář se jménem
-`prezencka`, ve kterém je nějaký soubor.
+`attendance`, ve kterém je nějaký soubor.
 
 
 Na URL (adresu), kterou jsi v tomhle příkladě
@@ -141,7 +141,7 @@ Uvidíš seznam souborů a spoustu odkazů k
 informacím o repozitáři (například pod “commits”
 je historie).
 
-Přepni se do nového adresáře (`cd prezencka`)
+Přepni se do nového adresáře (`cd attendance`)
 a zkus se podívat na historii (`gitk` nebo `git log`).
 Možná je krátká, ale hlavně, že nějaká je.
 Máš na počítači kopii projektu, který založil někdo jiný!
@@ -189,7 +189,7 @@ kterou jsi použil{{a}} pro `git clone`.
 Vlevo nahoře najdi tlačítko “Fork” a klikni na něj.
 Tím si vytvoříš na GitHubu vlastní kopii repozitáře:
 adresa by měla být něco jako
-<code>https://github.com/<i>tvojejmeno</i>/prezencka</code>.
+<code>https://github.com/<i>tvojejmeno</i>/attendance</code>.
 
 
 > [note]
@@ -216,8 +216,8 @@ Třeba:
 
 ```console
 $ git remote -v
-origin  https://github.com/{{coach_username}}/prezencka (fetch)
-origin  https://github.com/{{coach_username}}/prezencka (push)
+origin  https://github.com/{{coach_username}}/attendance (fetch)
+origin  https://github.com/{{coach_username}}/attendance (push)
 ```
 
 Tenhle výstup znamená, že pod zkratkou “origin”
@@ -229,17 +229,17 @@ Nezapomeň nahradit <i>tvojejmeno</i> za jméno účtu,
 který máš na GitHubu ty. (Pozor, v příkazu je <i>tvojejmeno</i> dvakrát!)
 
 <div class="highlight codehilite">
-<pre><code><span class="gp">$</span> git remote add <i>tvojejmeno</i> https://github.com/<i>tvojejmeno</i>/prezencka
+<pre><code><span class="gp">$</span> git remote add <i>tvojejmeno</i> https://github.com/<i>tvojejmeno</i>/attendance
 </code></pre></div>
 
 a zkontroluj si, že se to povedlo:
 
 <div class="highlight codehilite">
 <pre><code><span class="gp">$</span> git remote -v
-<span class="go">origin  git@github.com:{{coach_username}}/prezencka.git (fetch)</span>
-<span class="go">origin  git@github.com:{{coach_username}}/prezencka.git (push)</span>
-<span class="go"><i>tvojejmeno</i>      https://github.com/<i>tvojejmeno</i>/prezencka (fetch)</span>
-<span class="go"><i>tvojejmeno</i>      https://github.com/<i>tvojejmeno</i>/prezencka (push)</span>
+<span class="go">origin  git@github.com:{{coach_username}}/attendance.git (fetch)</span>
+<span class="go">origin  git@github.com:{{coach_username}}/attendance.git (push)</span>
+<span class="go"><i>tvojejmeno</i>      https://github.com/<i>tvojejmeno</i>/attendance (fetch)</span>
+<span class="go"><i>tvojejmeno</i>      https://github.com/<i>tvojejmeno</i>/attendance (push)</span>
 </code></pre></div>
 
 Tolik k nastavení – `git remote add`
@@ -256,7 +256,7 @@ což znamená: pošli na adresu uloženou pod zkratkou
 větev `master`.
 
 Funguje? Podívej se na
-<code>https://github.com/<i>tvojejmeno</i>/prezencka</code>
+<code>https://github.com/<i>tvojejmeno</i>/attendance</code>
 v prohlížeči a ujisti se, že tam tvoje změny jsou.
 
 

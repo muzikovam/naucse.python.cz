@@ -68,15 +68,15 @@ jen Gitu řekneme, že z něj chceme ten repozitář udělat. To má za následe
 Naším dnešním cílem je ale přispět do projektu, který založil někdo jiný. Proto použijeme příkaz `git clone` ke stažení vzdáleného repozitáře.
 
 ```console
-$ git clone https://github.com/asgeirrr/prezencka
+$ git clone https://github.com/asgeirrr/attendance
 ```
 
-V aktuálním adresáři se nám vytvořil podadresář `prezencka`, který obsahuje všechny soubory, které vidíme ve webovém rozhraní na [GitHubu](https://github.com/asgeirrr/prezencka).
+V aktuálním adresáři se nám vytvořil podadresář `attendance`, který obsahuje všechny soubory, které vidíme ve webovém rozhraní na [GitHubu](https://github.com/asgeirrr/attendance).
 
 
 #### Stav repozitáře (`git status`)
 
-Velmi často potřebujeme zjistit současný stav repozitáře. Navigujte v příkazové řádce do adresáře `prezencka` a zadejte `git status`. Git nám odpoví:
+Velmi často potřebujeme zjistit současný stav repozitáře. Navigujte v příkazové řádce do adresáře `attendance` a zadejte `git status`. Git nám odpoví:
 
 ```console
 $ git status
@@ -97,7 +97,7 @@ Už jsme několikrát zmínili, že Git je verzovací systém. Jak že to ale so
 V podstatě mu musíme dát příkaz, aby zmrazil současný stav repozitáře, tzv. vytvořit *revizi*.
 Pak můžeme dělat další změny, ale už vždy budeme schopni se k této revizi vrátit.
 
-Přidejte do adresáře `prezencka` soubor `vase_jmeno.txt`, např. tedy `magdalena_rettigova.txt`
+Přidejte do adresáře `attendance` soubor `vase_jmeno.txt`, např. tedy `magdalena_rettigova.txt`
 a do něj napište svoje současné povolání nebo cokoliv jiného.
 Zkontrolujte současný stav repozitáře pomocí `git status`: Git oznámí, že v adresáři je soubor, o kterém ještě “neví”. 
 
@@ -250,10 +250,10 @@ a všichni uživatelé projektu, na kterém pracujeme, budou mít užitek z naš
 Nemáme ale do původního repozitáře práva na zápis, musíme tedy poslat změny nejprve do naší kopie repozitáře,
 vizte obrázek na začátku.
 
-Udělejte si účet na GitHubu (jestli ho ještě nemáte) a pak jděte na adresu [prezencky](https://github.com/asgeirrr/prezencka/),
+Udělejte si účet na GitHubu (jestli ho ještě nemáte) a pak jděte na adresu [prezencky](https://github.com/asgeirrr/attendance/),
 kterou jste použili pro `git clone`. 
 Vpravo nahoře je tlačítko “Fork”, klikněte na něj. Tím se na GitHubu vytvoří vaše kopie repozitáře:
-adresa by měla být něco jako `https://github.com/tvojejmeno/prezencka`.
+adresa by měla být něco jako `https://github.com/tvojejmeno/attendance`.
 
 A teď, jak nahrát změny z našeho počítače na GitHub? Git si u každého repozitáře na našem počítači pamatuje adresy, 
 odkud se dají stahovat a kam se dají posílat změny. 
@@ -261,8 +261,8 @@ Seznam těchto adres nám ukáže příkaz `git remote -v`. Třeba:
 
 ```console
 $ git remote -v
-origin  https://github.com/asgeirrr/prezencka (fetch)
-origin  https://github.com/asgeirrr/prezencka (push)
+origin  https://github.com/asgeirrr/attendance (fetch)
+origin  https://github.com/asgeirrr/attendance (push)
 ```
 
 Tenhle výstup znamená, že pod zkratkou *origin* se schovává adresa, ze které jsme repozitář naklonovali.
@@ -272,17 +272,17 @@ nebo svým uživatelským jménem na GitHubu,
 aby nám bylo jasné, že je to ten náš, do kterého můžeme nahrávat změny.
 
 ```console
-$ git remote add tvojejmeno https://github.com/tvojejmeno/prezencka
+$ git remote add tvojejmeno https://github.com/tvojejmeno/attendance
 ```
 
 Zkontrolujme, že se nám to povedlo:
 
 ```console
 $ git remote -v
-origin  https://github.com/asgeirrr/prezencka (fetch)
-origin  https://github.com/asgeirrr/prezencka (push)
-tvojejmeno  https://github.com/tvojejmeno/prezencka (fetch)
-tvojejmeno  https://github.com/tvojejmeno/prezencka (push)
+origin  https://github.com/asgeirrr/attendance (fetch)
+origin  https://github.com/asgeirrr/attendance (push)
+tvojejmeno  https://github.com/tvojejmeno/attendance (fetch)
+tvojejmeno  https://github.com/tvojejmeno/attendance (push)
 ```
 
 Tolik k nastavení ‒ `git remote add` stačí udělat jednou pro každý repozitář. Pak už můžeme změny nahrávat pomocí: 
@@ -293,7 +293,7 @@ $ git push tvojejmeno master
 
 což znamená: pošli na adresu uloženou pod zkratkou `tvojejmeno` větev `master`.
 
-Funguje? Můžeme se podívat na `https://github.com/tvojejmeno/prezencka` v prohlížeči a ujistit se, že tam změny jsou.
+Funguje? Můžeme se podívat na `https://github.com/tvojejmeno/attendance` v prohlížeči a ujistit se, že tam změny jsou.
 
 
 ### Žádost o začlenění (pull request)
