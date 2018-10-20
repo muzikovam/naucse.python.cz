@@ -80,7 +80,7 @@ And *“nothing to commit”* says that there are no files to be saved and versi
 
 Try adding something to Git now!
 
-Create a new file `basnicka.txt` and write a short poem inside.
+Create a new file `poem.txt` and write a short poem inside.
 It should span at least five lines so that we have enough to work with.
 Then, try executing `git status` again: Git reports that there is a new
 file in the directory and that it isn't managed by Git yet.
@@ -96,7 +96,7 @@ Initial commit
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-        ␛[31mbasnicka.txt␛[m
+        ␛[31mpoem.txt␛[m
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
@@ -105,7 +105,7 @@ We need to make Git track any new file explicitely.
 Let's do that for the file with your poem:
 
 ```ansi
-␛[36m$␛[0m git add basnicka.txt
+␛[36m$␛[0m git add poem.txt
 ```
 
 Then check the state of the repository again:
@@ -119,7 +119,7 @@ Initial commit
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
 
-        ␛[32mnew file:   basnicka.txt␛[m
+        ␛[32mnew file:   poem.txt␛[m
 
 ```
 
@@ -131,7 +131,7 @@ Let's create our first commit:
 ␛[36m$␛[0m git commit
 [master (root-commit) 1a009f4] First revision
  1 file changed, 6 insertions(+)
- create mode 100644 basnicka.txt
+ create mode 100644 poem.txt
 ```
 
 After entering this command, an editor opens where you can write a short description 
@@ -186,11 +186,11 @@ Date:   Mon Mar 20 14:51:34 2017 +0100
 
     First revision
 
-␛[1mdiff --git a/basnicka.txt b/basnicka.txt␛[m
+␛[1mdiff --git a/poem.txt b/poem.txt␛[m
 ␛[1mnew file mode 100644␛[m
 ␛[1mindex 0000000..558d133␛[m
 ␛[1m--- /dev/null␛[m
-␛[1m+++ b/basnicka.txt␛[m
+␛[1m+++ b/poem.txt␛[m
 ␛[36m@@ -0,0 +1,6 @@␛[m
 ␛[32m+␛[m␛[32mHolka modrooká, nesedávej u potoka␛[m
 ␛[32m+␛[m␛[32mHolka modrooká, nesedávej tam␛[m
@@ -204,7 +204,7 @@ Notice the unique
 <span class="yellow">Git commit ID</span>
 that allows you to return to this state of your project at any point in the future.
 The author's name, the date of this commit's creation and the commit message
-are also listed, along with the summary of changes: a new file <tt class="strong">basnicka.txt</tt>
+are also listed, along with the summary of changes: a new file <tt class="strong">poem.txt</tt>
 containing the <span class="green">text in green</span> has been added.
 
 > [note]
@@ -237,7 +237,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-        ␛[31mmodified:   basnicka.txt␛[m
+        ␛[31mmodified:   poem.txt␛[m
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
@@ -247,10 +247,10 @@ To see the details, execute the command <code>git diff</code>.
 
 ```ansi
 ␛[36m$␛[0m git diff
-␛[1mdiff --git a/basnicka.txt b/basnicka.txt␛[m
+␛[1mdiff --git a/poem.txt b/poem.txt␛[m
 ␛[1mindex 558d133..24e2384 100644␛[m
-␛[1m--- a/basnicka.txt␛[m
-␛[1m+++ b/basnicka.txt␛[m
+␛[1m--- a/poem.txt␛[m
+␛[1m+++ b/poem.txt␛[m
 ␛[36m@@ -1,6 +1,9 @@␛[m
 ␛[31m-Holka modrooká, nesedávej u potoka␛[m
 ␛[31m-Holka modrooká, nesedávej tam␛[m
@@ -292,7 +292,7 @@ one of the changes listed must have introduced the error!
 If you are satisfied with the changes, stage them for the next commit:
 
 ```ansi
-␛[36m$␛[0m git add basnicka.txt
+␛[36m$␛[0m git add poem.txt
 ```
 
 As usual, check the `status` of the repository; the file in green will be included
@@ -304,7 +304,7 @@ On branch master
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
-        ␛[32mmodified:   basnicka.txt␛[m
+        ␛[32mmodified:   poem.txt␛[m
 
 ```
 
@@ -352,10 +352,10 @@ Date:   Mon Mar 20 14:51:34 2017 +0100
     that it's easier to read like this. (Although, the real reason was 
     to demonstrate git diff.)
 
-␛[1mdiff --git a/basnicka.txt b/basnicka.txt␛[m
+␛[1mdiff --git a/poem.txt b/poem.txt␛[m
 ␛[1mindex 558d133..24e2384 100644␛[m
-␛[1m--- a/basnicka.txt␛[m
-␛[1m+++ b/basnicka.txt␛[m
+␛[1m--- a/poem.txt␛[m
+␛[1m+++ b/poem.txt␛[m
 ␛[36m@@ -1,6 +1,9 @@␛[m
 ␛[31m-Holka modrooká, nesedávej u potoka␛[m
 ␛[31m-Holka modrooká, nesedávej tam␛[m

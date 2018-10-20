@@ -39,12 +39,12 @@ K vytvoření nové větve znovu použiješ
 `git branch`, jen tomu příkazu dáš navíc
 jméno nové větve.
 Třeba budeš chtít k básničce doplnit jméno autora,
-tak větev pojmenuješ `doplneni-autora`.
+tak větev pojmenuješ `add-author`.
 
 ```ansi
-␛[36m$␛[0m git branch doplneni-autora
+␛[36m$␛[0m git branch add-author
 ␛[36m$␛[0m git branch
-  doplneni-autora␛[m
+  add-author␛[m
 * ␛[32mmaster␛[m
 ```
 
@@ -55,41 +55,41 @@ Hvězdička ve výstupu z `git branch` ukazuje,
 Na přepnutí budeš potřebovat další příkaz:
 
 ```ansi
-␛[36m$␛[0m git checkout doplneni-autora
-Switched to branch 'doplneni-autora'
+␛[36m$␛[0m git checkout add-author
+Switched to branch 'add-author'
 ␛[36m$␛[0m git branch
-* ␛[32mdoplneni-autora␛[m
+* ␛[32madd-author␛[m
   master␛[m
 ```
 
-Tak. Teď jsi „ve” větvi `doplneni-autora`.
-Doplň nějaké jméno do souboru `basnicka.txt`,
+Tak. Teď jsi “ve” větvi `add-author`.
+Doplň nějaké jméno do souboru `poem.txt`,
 a pomocí `git add` a `git commit` udělej novou revizi.
 Pak koukni na `gitk --all`, jak to vypadá:
 
 {{ figure(
     img=static('branch1.png'),
-    alt="Výstup programu `gitk` s větví doplneni-autora",
+    alt="Výstup programu `gitk` s větví add-author",
 ) }}
 
-Aktuální větev – `doplneni-autora` – je
+Aktuální větev – `add-author` – je
 zvýrazněná tučně a starší `master` je stále
 na původní revizi.
 
 Opusťme teď na chvíli práci na doplňování autora.
 Vrať se do větve `master` a vytvoř z ní
-větev `doplneni-jmena`.
+větev `add-name`.
 Pak se na tuhle novou větev přepni.
 
 ```ansi
 ␛[36m$␛[0m git checkout master
 Switched to branch 'master'
-␛[36m$␛[0m git branch doplneni-jmena
-␛[36m$␛[0m git checkout doplneni-jmena
-Switched to branch 'doplneni-jmena'
+␛[36m$␛[0m git branch add-name
+␛[36m$␛[0m git checkout add-name
+Switched to branch 'add-name'
 ␛[36m$␛[0m git branch
-  doplneni-autora␛[m
-* ␛[32mdoplneni-jmena␛[m
+  add-author␛[m
+* ␛[32madd-name␛[m
   master␛[m
 ```
 
@@ -99,7 +99,7 @@ Všechno zkontroluj přes `gitk --all`.
 
 {{ figure(
     img=static('branches.png'),
-    alt="Výstup programu `gitk` s větvemi doplneni-autora a doplneni-nazvu",
+    alt="Výstup programu `gitk` s větvemi add-author a add-name",
 ) }}
 
 
@@ -135,10 +135,10 @@ Příkazu musíš dát jméno větve, kterou chceš sloučit.
 ```ansi
 ␛[36m$␛[0m git checkout master
 Switched to branch 'master'
-␛[36m$␛[0m git merge doplneni-jmena
+␛[36m$␛[0m git merge add-name
 Updating e929fb0..c982a81
 Fast-forward
- basnicka.txt | 6 ␛[32m+++++␛[m␛[31m-␛[m
+ poem.txt | 6 ␛[32m+++++␛[m␛[31m-␛[m
  1 file changed, 5 insertions(+), 1 deletion(-)
 ```
 
@@ -147,7 +147,7 @@ vlastně nebylo co slučovat – jen se do větve
 `master` přidaly nové změny.
 Zkontroluj v `gitk --all`, jak to vypadá.
 
-A pak zkus sloučit i druhou větev: `git merge doplneni-autora`.
+A pak zkus sloučit i druhou větev: `git merge add-author`.
 Tady to bude složitější: Může se stát, že změny nepůjdou
 automaticky sloučit a ve výstupu se objeví hláška
 `merge conflict` (slučovací konflikt).
@@ -162,10 +162,10 @@ Ať nastal konflikt nebo ne, vytvoří se “slučovací revize”
 (angl. *merge commit*), které – jako každé revizi – můžeš dát popisek.
 
 ```ansi
-␛[36m$␛[0m git merge doplneni-autora
-Auto-merging basnicka.txt
+␛[36m$␛[0m git merge add-author
+Auto-merging poem.txt
 Merge made by the 'recursive' strategy.
- basnicka.txt | 2 ␛[32m++␛[m
+ poem.txt | 2 ␛[32m++␛[m
  1 file changed, 2 insertions(+)
 ```
 
@@ -173,7 +173,7 @@ Povedlo se?
 
 {{ figure(
     img=static('merge.png'),
-    alt="Výstup programu `gitk` s větvemi doplneni-autora a doplneni-nazvu sloučenými do master",
+    alt="Výstup programu `gitk` s větvemi add-author a add-name sloučenými do master",
 ) }}
 
 Pokud ano, můžeš staré větve vymazat – všechny jejich
@@ -181,10 +181,10 @@ změny jsou v `master` a nemá na nich cenu
 pracovat dál.
 
 ```ansi
-␛[36m$␛[0m git branch -d doplneni-autora
-Deleted branch doplneni-autora (was 0e213cd).
-␛[36m$␛[0m git branch -d doplneni-jmena
-Deleted branch doplneni-jmena (was c982a81).
+␛[36m$␛[0m git branch -d add-author
+Deleted branch add-author (was 0e213cd).
+␛[36m$␛[0m git branch -d add-name
+Deleted branch add-name (was c982a81).
 ␛[36m$␛[0m git branch
 * ␛[32mmaster␛[m
 ```

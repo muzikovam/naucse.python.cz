@@ -12,7 +12,7 @@ forward(50)
 getcanvas().postscript(file='obrazek.ps')
 END
 
-cat > poznamky.txt << END
+cat > notes.txt << END
 Tajné!
 END
 
@@ -36,7 +36,7 @@ git status
 
 
 cat > .git/info/exclude << END
-/poznamky.txt
+/notes.txt
 END
 
 git status

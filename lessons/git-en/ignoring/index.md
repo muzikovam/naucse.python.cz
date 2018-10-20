@@ -43,7 +43,7 @@ Založ si nový repozitář a vytvoř v něm tři soubory s tímto obsahem:
     getcanvas().postscript(file='obrazek.ps')
     ```
 
-* `poznamky.txt`
+* `notes.txt`
 
     ```plain
     Tohle je tajné!
@@ -78,7 +78,7 @@ Untracked files:
         ␛[31mAutofile.tmp␛[m
         ␛[31mobrazek.ps␛[m
         ␛[31mobrazek.py␛[m
-        ␛[31mpoznamky.txt␛[m
+        ␛[31mnotes.txt␛[m
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
@@ -121,7 +121,7 @@ Untracked files:
         ␛[31m.gitignore␛[m
         ␛[31mAutofile.tmp␛[m
         ␛[31mobrazek.py␛[m
-        ␛[31mpoznamky.txt␛[m
+        ␛[31mnotes.txt␛[m
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
@@ -146,7 +146,7 @@ Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
         ␛[31mAutofile.tmp␛[m
-        ␛[31mpoznamky.txt␛[m
+        ␛[31mnotes.txt␛[m
 ```
 
 Když uděláš `git commit` a repozitář nasdílíš s ostatními, všichni dostanou
@@ -157,7 +157,7 @@ Jak ignorovat zbylé dva soubory?
 
 ## Osobní poznámky
 
-Soubor `poznamky.txt` se taky dá zařadit do `.gitignore`, ale moc se tam nehodí.
+Soubor `notes.txt` se taky dá zařadit do `.gitignore`, ale moc se tam nehodí.
 Existuje jen u tebe; není důvod předpokládat, že si někdo jiný vytvoří
 soubor se stejným jménem.
 
@@ -171,7 +171,7 @@ o historii projektu.
 Ale `exclude` je výjimka. Napiš na konec tohoto souboru:
 
 ```plain
-poznamky.txt
+notes.txt
 ```
 
 A po uložení budou poznámky ignorovány!
