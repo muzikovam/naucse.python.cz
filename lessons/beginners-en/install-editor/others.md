@@ -44,7 +44,7 @@ Jde-li vybírat po jednotlivých mezerách, je všechno v pořádku.
 
 Nejde-li vybírat po jednotlivých mezerách, nebo pokud se jich po stisknutí
 <kbd>Tab</kbd> vloží jiný počet než 4, podívej se do nastavení po možnostech
-jako „velikost odsazení“ nebo „nahrazovat tabulátory za mezery”.
+jako “velikost odsazení” nebo “nahrazovat tabulátory za mezery”.
 
 
 ## Kontrola stylu zdrojového kódu

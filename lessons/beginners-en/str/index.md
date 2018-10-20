@@ -21,7 +21,7 @@ print('Haló haló!\nCo se stalo?')
 ```
 
 Obecně zpětné lomítko umožňuje zapsat znaky, které by se špatně zadávaly.
-Třeba uvozovka se dá zapsat jako `\"` a „apostrof“ jako `\'`.
+Třeba uvozovka se dá zapsat jako `\"` a “apostrof” jako `\'`.
 To se dá použít, když potřebuješ mít v jednom
 řetězci uvozovku i apostrof:
 
@@ -33,7 +33,7 @@ print('"Jen ho nech," řek\' děd. "Kdo zná líp kraj?"')
 Zpětným lomítkem se dají přidávat i
 exotické znaky, které nemáš na klávesnici.
 Ty se dají zapsat jako `\N` a jméno znaku
-v složených („kudrnatých“) závorkách.
+v složených (“kudrnatých”) závorkách.
 Třeba následující znaky.
 (Do konzole na Windows bohužel nemusí jít všechny
 vypsat, ale aspoň první by jít měl):
@@ -51,7 +51,7 @@ Tahle vychytávka má jeden, někdy nepříjemný,
 důsledek: pokud chceš použít zpětné lomítko
 (třeba ve jménech souborů na Windows),
 musíš ho ve zdrojovém kódu zdvojit.
-Sekvence `\\` znamená „jedno zpětné lomítko“.
+Sekvence `\\` znamená “jedno zpětné lomítko”.
 
 ```python
 print('C:\\PyLadies\\Nový adresář')
@@ -116,7 +116,7 @@ Nedostal{{a}} – dostal{{a}} jsi *šesté* písmeno.
 {% endfilter %}
 
 Jak sis možná už všiml{{a}}, programátoři počítají od nuly.
-„První“ prvek má vždy číslo nula, druhý číslo jedna a tak dál.
+“První” prvek má vždy číslo nula, druhý číslo jedna a tak dál.
 
 Stejně je to i s písmeny v řetězcích: první písmeno má číslo nula,
 druhé jedna, ... a osmé písmeno má číslo sedm.
@@ -269,7 +269,7 @@ Proč tomu tak je, to za nějakou dobu poznáš.
 ## Formátování
 
 Obzvláště užitečná je metoda `format`,
-která v rámci řetězce nahradí dvojice „kudrnatých“ závorek
+která v rámci řetězce nahradí dvojice “kudrnatých” závorek
 za to, co dostane v argumentech:
 
 ```python
@@ -282,7 +282,7 @@ Představ si to jako jako formulář, do kterého Python na vyznačená místa
 vpisuje hodnoty.
 
 Pokud chceš nahradit hodnoty v jiném pořadí, nebo když chceš aby šablona
-byla čitelnější, můžeš do „kudrnatých“ závorek napsat jména:
+byla čitelnější, můžeš do “kudrnatých” závorek napsat jména:
 
 ```python
 vypis = 'Ahoj {jmeno}! Výsledek je {cislo}.'.format(cislo=7, jmeno='Elvíro')
@@ -290,7 +290,7 @@ print(vypis)
 ```
 
 Formátování se používá skoro všude, kde je
-potřeba „hezky“ vypsat nějakou hodnotu.
+potřeba “hezky” vypsat nějakou hodnotu.
 
 
 ## Sekání řetězců
@@ -327,8 +327,8 @@ print(retezec[-4:])
 
 Určování vhodných čísel, *indexů*, občas vyžaduje trochu zamyšlení.
 
-U podobného „sekání“ (angl. *string slicing*)
-je lepší si číslovat „hranice“ mezi znaky.
+U podobného “sekání” (angl. *string slicing*)
+je lepší si číslovat “hranice” mezi znaky.
 Člověk tomu pak lépe rozumí:
 
 {{ anchor('slicing-diagram') }}

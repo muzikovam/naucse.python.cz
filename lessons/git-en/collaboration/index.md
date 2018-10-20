@@ -138,7 +138,7 @@ Vytvoří se ti nový repozitář – adresář se jménem
 Na URL (adresu), kterou jsi v tomhle příkladě
 použil{{a}}, se můžeš podívat i v prohlížeči.
 Uvidíš seznam souborů a spoustu odkazů k
-informacím o repozitáři (například pod „commits”
+informacím o repozitáři (například pod “commits”
 je historie).
 
 Přepni se do nového adresáře (`cd prezencka`)
@@ -153,21 +153,21 @@ Teď se do projektu zapoj.
 Přidej soubor se svým jménem (nebo přezdívkou)
 a dej ho do gitu (`git add jmeno.txt`, `git commit`).
 
-Teď zbývá „jen” změnu začlenit do původního sdíleného repozitáře.
+Teď zbývá “jen” změnu začlenit do původního sdíleného repozitáře.
 To ale není jen tak: repozitář, který jsi
 naklonoval{{a}}, patří koučovi. A tomu by se asi
 nelíbilo, kdyby kdokoliv na Internetu mohl přijít
 a nahrát mu do repozitáře změny.
 
 Spousta míst na Internetu funguje tak, že vybraná
-skupina lidí má „přístup”: můžou dělat změny,
+skupina lidí má “přístup”: můžou dělat změny,
 jak se jim líbí.
 
 S Gitem se používá jiný přístup:
 změny nahraješ do *vlastního* sdíleného
 repozitáře a majiteli původního projektu napíšeš
 žádost o začlenění těch změn (angl. *pull request*).
-Může to být třeba mail se slovy „Hele, na té a té
+Může to být třeba mail se slovy “Hele, na té a té
 adrese mám nějaké změny, které by se ti mohli hodit!
 Přidej je do svého projektu!”
 
@@ -186,7 +186,7 @@ zmáčknout tlačítko). Pojďme se podívat, jak na to.
 
 Přihlaš se na GitHub a pak zajdi na adresu
 kterou jsi použil{{a}} pro `git clone`.
-Vlevo nahoře najdi tlačítko „Fork” a klikni na něj.
+Vlevo nahoře najdi tlačítko “Fork” a klikni na něj.
 Tím si vytvoříš na GitHubu vlastní kopii repozitáře:
 adresa by měla být něco jako
 <code>https://github.com/<i>tvojejmeno</i>/prezencka</code>.
@@ -220,7 +220,7 @@ origin  https://github.com/{{coach_username}}/prezencka (fetch)
 origin  https://github.com/{{coach_username}}/prezencka (push)
 ```
 
-Tenhle výstup znamená, že pod zkratkou „origin”
+Tenhle výstup znamená, že pod zkratkou “origin”
 se schovává adresa, ze které jsi repozitář
 naklonoval{{a}}.
 
@@ -301,11 +301,11 @@ který máš u sebe na počítači.)
 
 To se dělá příkazem
 `git pull origin master` (stáhni změny
-z větve „master” z adresy pod zkratkou „origin”).
+z větve “master” z adresy pod zkratkou “origin”).
 Pomocí `gitk --all` nebo `git log`
 se můžeš podívat, jak se projekt mezitím vyvinul.
 
-Gratuluji! Právě jsi {{gnd('prošel', 'prošla')}} „kolečkem“,
+Gratuluji! Právě jsi {{gnd('prošel', 'prošla')}} “kolečkem”,
 které většina programátorů dělá denně: udělání nějaké změny,
 odeslání kolegům na kontrolu a začlenění a stažení změn od ostatních.
 
@@ -317,7 +317,7 @@ na GitHubu najdeš chybu, ale nemáš čas nebo
 znalosti, abys ji opravil{{a}}. V takovém případě
 často na GitHubu na stránce projektu pod záložkou *Issues*
 najdeš seznam nahlášených problémů.
-Nenajdeš-li mezi nimi „svoji” chybu, můžeš ji
+Nenajdeš-li mezi nimi “svoji” chybu, můžeš ji
 nahlásit – stačí kliknout na *New Issue*
 a můžeš psát, kdy chyba nastává, co program dělá
 špatně a co by měl dělat místo toho.

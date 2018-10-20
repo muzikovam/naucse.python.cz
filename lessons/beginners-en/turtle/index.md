@@ -119,7 +119,7 @@ exitonclick()
 
 Nakresli obdélník.
 
-Zkus zařídit, aby se po nakreslení „dívala” želva doprava (tak jako na začátku).
+Zkus zařídit, aby se po nakreslení “dívala” želva doprava (tak jako na začátku).
 
 ![Želví obdélník](static/turtle-rect.png)
 

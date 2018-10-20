@@ -10,7 +10,7 @@ If you already have some favourite it will just need set up.
 
 ## What editors for programmers can do?
 
-Editors for programmers allows us to edit *plain text*. Unlike programs such Word, 
+Editors for programmers allow us to edit *plain text*. Unlike programs such as Word, 
 Writer or Pages, it does not allow *formatting* text.
 
 Using the editor, we will enter commands to the computer, so we do not need formatting, 

@@ -30,7 +30,7 @@ print('Hotovo!')
 
 > [note]
 > Jestli okýnko není černé ale je v něm nějaký
-> „nepořádek“, představuj si zatím, že černé je.
+> “nepořádek”, představuj si zatím, že černé je.
 > Stává se to hlavně na počítačích s Mac OS a některými
 > druhy Linuxu.
 > Než do okýnka začneme kreslit obrázky, nepořádek
@@ -67,7 +67,7 @@ V tomhle programu máme dva druhy akcí, které se pravidelně střídají.
 Jakmile taková akce nastane, ať vstup od člověka nebo
 od počítače, tak se zpracuje a výsledný stav se oznámí.
 
-Podobnou strukturu „reakcí“ jsme použily už dřív,
+Podobnou strukturu “reakcí” jsme použily už dřív,
 třeba u hry kámen-nůžky-papír:
 
 * Nějaká příprava
@@ -86,8 +86,8 @@ o webovou stránku. Když nějaký přijme, zpracuje ho
 a jako výstup pošle odpověď.
 
 Složitější programy reagují na spoustu druhů událostí,
-ne jen na „požadavek“ nebo „tah hráče“/„tah počítače“.
-Co se stane ve „vyhodnocení vstupu“ pak závisí
+ne jen na “požadavek” nebo “tah hráče”/“tah počítače”.
+Co se stane ve “vyhodnocení vstupu” pak závisí
 na druhu události.
 
 Webový prohlížeč čeká na kliknutí myši nebo stisk klávesy
@@ -95,7 +95,7 @@ a zachová se podle něj – třeba pošle přes Internet
 požadavek vzdálenému serveru.
 A potom čeká na další akci. Může přijít odpověď od
 serveru, a až ta přijde, vykreslí příslušnou stránku
-na obrazovku. Nebo může uživatel zmáčknout „STOP“
+na obrazovku. Nebo může uživatel zmáčknout “STOP”
 a požadavek se zruší.
 
 Textový editor čeká na různé druhy vstupu z klávesnice
@@ -139,7 +139,7 @@ už je pro každý program jiné, takže si je budeš muset
 naprogramovat {{gnd('sám', 'sama')}}.
 
 Zatím pro nás Pyglet zpracovává jen dvě události:
-zavření okna (tlačítkem „✕“, které k okýnkům přidává
+zavření okna (tlačítkem “✕”, které k okýnkům přidává
 operační systém) a stisk klávesy <kbd>Esc</kbd>,
 který taky zavře okno.
 Po zavření okna skončí smyčka událostí
@@ -325,7 +325,7 @@ Vysvětleme si, co se tady děje:
 * `obrazek = pyglet.image.load('had.png')` načte ze souboru obrázek
 * `had = pyglet.sprite.Sprite(obrazek)`
   vytvoří speciální objekt [Sprite](https://cs.wikipedia.org/wiki/Sprite_%28po%C4%8D%C3%ADta%C4%8Dov%C3%A1_grafika%29),
-  který určuje, že tento obrázek chceme „posadit“
+  který určuje, že tento obrázek chceme “posadit”
   na určité místo v černém okýnku.
   Když neuděláme nic dalšího, bude obrázek čekat v levém rohu.
 * Funkce `vykresli()` se stará o vykreslení okna – výstup našeho programu.
@@ -405,7 +405,7 @@ Co se stane, když zkusíš podobně nastavovat atribut `rotation`?
 
 <img src="{{ static('had2.png') }}" alt="" style="display:block;float:right;">
 
-Pyglet umí kromě opakovaného „tikání“ zavolat funkci
+Pyglet umí kromě opakovaného “tikání” zavolat funkci
 jednorázově, za určitou dobu.
 
 Stáhni si (nebo vytvoř) druhý obrázek. Já mám druhého

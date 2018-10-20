@@ -32,7 +32,7 @@ Program se dá přerušit zmáčknutím
 > Tahle klávesová zkratka vyvolá v programu chybu
 > a program se – jako po každé chybě – ukončí.
 
-A nakonec, existuje příkaz `break`, který z cyklu „vyskočí“:
+A nakonec, existuje příkaz `break`, který z cyklu “vyskočí”:
 začnou se hned vykonávat příkazy za cyklem.
 
 ```python
@@ -66,8 +66,8 @@ Dokážeš napsat tenhle program?
 * Začínáš s 0 body.
 * Počítač v každém kole vypíše, kolik máš bodů,
   a zeptá se hráče, jestli chce pokračovat.
-* Pokud hráč odpoví „ne“, hra končí.
-* Pokud hráč odpoví „ano“, počítač „otočí kartu“
+* Pokud hráč odpoví “ne”, hra končí.
+* Pokud hráč odpoví “ano”, počítač “otočí kartu”
   (náhodně vybere číslo od 2 do 10) a přičte její hodnotu k bodům.
 * Pokud má hráč víc než 21 bodů, prohrává.
 * Cílem hry je získat co nejvíc bodů, ideálně 21.

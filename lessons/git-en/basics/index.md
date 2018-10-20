@@ -71,9 +71,9 @@ Initial commit
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
-*„On branch master”* refers to so called branches, we'll get back to that later.
-*„Initial commit”* means that there is no revision stored yet.
-And *„nothing to commit”* says that there are no files to be saved and versioned in the directory.
+*“On branch master”* refers to so called branches, we'll get back to that later.
+*“Initial commit”* means that there is no revision stored yet.
+And *“nothing to commit”* says that there are no files to be saved and versioned in the directory.
 
 
 ## First revision
@@ -123,7 +123,7 @@ Changes to be committed:
 
 ```
 
-The lines in green („changes to be committed“)
+The lines in green (“changes to be committed”)
 will be included in the next batch of changes (a *commit*) that you will create.
 Let's create our first commit:
 
@@ -372,7 +372,7 @@ Date:   Mon Mar 20 14:51:34 2017 +0100
 ```
 
 ## Diagram
-The diagram below vizualizes what each command demonstrated thus far does exactly,
+The diagram below visualizes what each command demonstrated thus far does exactly,
 and how the changes move from “not staged” to “commited”.
 
 {{ figure(

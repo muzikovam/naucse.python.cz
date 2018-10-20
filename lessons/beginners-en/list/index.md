@@ -76,7 +76,7 @@ print(cisla[2])
 
 Hranatými závorkami můžeme získávat podseznamy.
 [Diagram z materiálů k řetězcům]({{ lesson_url('beginners/str')}}#slicing-diagram)
-ukazuje, jak u takového „sekání” číslovat:
+ukazuje, jak u takového “sekání” číslovat:
 funguje to stejně, jen místo menšího řetězce
 dostaneme menší seznam.
 
@@ -99,7 +99,7 @@ Oproti tomu seznamy se dají měnit bez nastavování proměnné.
 Základní způsob, jak změnit seznam, je přidání
 prvku na konec pomocí metody `append`.
 Ta *nic nevrací* (resp. vrací `None`),
-ale „na místě” (angl. *in place*) změní
+ale “na místě” (angl. *in place*) změní
 seznam, na kterém pracuje. Vyzkoušej si to:
 
 ```python
@@ -112,7 +112,7 @@ print(prvocisla)
 Takové měnění hodnoty může být občas překvapující,
 protože stejnou hodnotu může mít více proměnných.
 Protože se mění hodnota samotná, může to vypadat,
-že se proměnná „mění aniž na ni sáhneme”:
+že se proměnná “mění aniž na ni sáhneme”:
 
 ```python
 a = [1, 2, 3]   # vytvoření seznamu
@@ -208,7 +208,7 @@ print(cisla)
 
 Další mazací metody jsou:
 * `pop`, která odstraní *a vrátí* poslední prvek v seznamu – například pokud
-  mám seznam karet v balíčku, jde takhle jednoduše „líznout” kartu,
+  mám seznam karet v balíčku, jde takhle jednoduše “líznout” kartu,
 * `remove`, která najde v seznamu daný prvek a odstraní ho,
 * `clear`, která vyprázdní celý seznam.
 
@@ -241,11 +241,11 @@ operátor `<`.
 Seznam s mixem čísel a řetězců tedy seřadit nepůjde.
 Operátor `<` definuje i
 jak přesně se řadí (např. čísla podle velikosti;
-řetězce podle speciální „abecedy” která řadí
+řetězce podle speciální “abecedy” která řadí
 velká písmena za malá, česká až za anglická, atd.).
 
 Metoda `sort` zná pojmenovaný argument
-`reverse`. Pokud ho nastavíš na *True*, řadí se „naopak”.
+`reverse`. Pokud ho nastavíš na *True*, řadí se “naopak”.
 
 ```python
 seznam = [4, 7, 8, 3, 5, 2, 4, 8, 5]
@@ -293,7 +293,7 @@ print(melodie.index('DE'))
 
 Seznam se dá použít v příkazu `if` (nebo `while`) jako podmínka,
 která platí, když v tom seznamu něco je.
-Jinými slovy, `seznam` je tu „zkratka“ pro `len(seznam) > 0`.
+Jinými slovy, `seznam` je tu “zkratka” pro `len(seznam) > 0`.
 
 ```python
 if seznam:
@@ -367,7 +367,7 @@ print(balicek)
 
 ## Seznamy a řetězce
 
-Seznamy a řetězce jsou druhy „sekvencí”,
+Seznamy a řetězce jsou druhy “sekvencí”,
 takže snad nepřekvapí, že se dá různě převádět
 z jednoho typu na druhý.
 Funkce `list` vytvoří z řetězce
@@ -382,7 +382,7 @@ print(slova)
 
 Metoda `split` umí brát i argument.
 Pokud ho předáme, místo mezer (a nových řádků)
-se řetězec „rozseká” daným oddělovačem.
+se řetězec “rozseká” daným oddělovačem.
 Takže když máme nějaká data oddělená čárkami,
 není nic jednoduššího než použít `split` s čárkou:
 
@@ -395,7 +395,7 @@ Chceme-li spojit seznam řetězců zase dohromady
 do jediného řetězce, použijeme metodu
 `join` (angl. *spojit*).
 Pozor, tahle metoda se volá na *oddělovači*,
-tedy řetězci, kterým se jednotlivé kousky „slepí”
+tedy řetězci, kterým se jednotlivé kousky “slepí”
 dohromady; a jako argument bere seznam jednotlivých
 řetězců.
 
@@ -485,7 +485,7 @@ Modul `random` obsahuje dvě funkce, které se hodí k seznamům.
 Jako `random.randrange`, obě mají něco
 společného s náhodou.
 
-Funkce `shuffle` seznam „zamíchá” – všechny prvky náhodně popřehází.
+Funkce `shuffle` seznam “zamíchá” – všechny prvky náhodně popřehází.
 Jako metoda `sort` i funkce `shuffle` nic nevrací.
 
 ```python
@@ -532,7 +532,7 @@ print(prvni_seznam)
 ```
 
 A protože jsou prvky samy seznamy,
-můžeme mluvit o věcech jako „první prvek druhého seznamu”:
+můžeme mluvit o věcech jako “první prvek druhého seznamu”:
 
 ```python
 druhy_seznam = seznam_seznamu[1]
@@ -556,7 +556,7 @@ prvni_prvek_druheho_seznamu = seznam_seznamu[1][0]
 A má tahle věc nějaké použití, ptáš se?
 Stejně jako vnořené cykly `for`
 nám umožnily vypsat tabulku, vnořené seznamy
-nám umožní si tabulku „zapamatovat”.
+nám umožní si tabulku “zapamatovat”.
 
 ```python
 def vytvor_tabulku(velikost=11):
@@ -581,7 +581,7 @@ for radek in nasobilka:
     print()
 ```
 
-Co s takovou „zapamatovanou” tabulkou?
+Co s takovou “zapamatovanou” tabulkou?
 Můžeš si do ní uložit třeba pozice
 figurek na šachovnici nebo křížků a koleček
 ve *2D* piškvorkách.

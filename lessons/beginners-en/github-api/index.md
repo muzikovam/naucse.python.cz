@@ -8,7 +8,7 @@ Spousta webových služeb poskytuje takzvané
 *API* (z *application programming interface*,
 programátorské rozhraní), přes které je možné s danou
 službou komunikovat programově.
-Místo klikání na tlačítka a čtení stránek „očima”
+Místo klikání na tlačítka a čtení stránek “očima”
 dostaneme data ve formátu, kterým rozumí počítače –
 a v dnešní době to bude většinou formát JSON.
 
@@ -31,7 +31,7 @@ My to uděláme co nejjednodušeji, ať se rychle dostaneme k jádru věci:
 > [warning] Pozor!
 > Vygenerovaný kód je heslo, které držitele
 > opravňuje pracovat s Githubem pod tvým jménem!
-> Drž ho v tajnosti. Kdyby se přece jen dostalo „ven”, na stránce
+> Drž ho v tajnosti. Kdyby se přece jen dostalo “ven”, na stránce
 > [Personal Accesss Tokens](https://github.com/settings/tokens) ho deaktivuj.
 
     
@@ -62,7 +62,7 @@ print(stranka.text)
 Měl by se vypsat obsah stránky
 [https://github.com](https://github.com) –
 HTML kód, který se objeví když v prohlížeči dáš
-„Ukázat zdroj” (*View Page Source*, většinou <kbd>Ctrl</kbd>+<kbd>U</kbd>)
+“Ukázat zdroj” (*View Page Source*, většinou <kbd>Ctrl</kbd>+<kbd>U</kbd>)
 a ze kterého prohlížeč umí vykreslit stránku.
 
 Ale my nechceme obsah pro lidi.
@@ -129,7 +129,7 @@ Pomocí webových API se dají informace nejen číst, ale i měnit.
 
 Na stránce
 [github.com/pyvec/naucse.python.cz/stargazers](https://github.com/pyvec/naucse.python.cz/stargazers)
-je seznam lidí, kteří „ohvězdičkovali” tyto učební ateriály.
+je seznam lidí, kteří “ohvězdičkovali” tyto učební ateriály.
 Je jich zatím málo; pojďme se k nim pomocí webového API přidat.
 
 Napřed svému tokenu (na Githubu v nastavení
@@ -139,7 +139,7 @@ Od teď token střež obzvlášť pečlivě, protože se pomocí
 něj dají informace na Githubu i měnit.
 
 Chceme-li měnit informace, musíme knihovně Requests
-říct, aby použila jinou „HTTP metodu” než `GET`.
+říct, aby použila jinou “HTTP metodu” než `GET`.
 Co to přesně jsou HTTP metody je na trochu delší povídání
 (viz [Wikipedia](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods)),
 ale stručně řečeno, pomocí `GET` se většinou stahuje

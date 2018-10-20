@@ -8,14 +8,14 @@ věcech zároveň.
 V projektu do práce se objeví se chyba,
 která musí být opravená
 ještě dnes, tak programátor{{ gnd('', 'ka') }} opustí, co zrovna dělá,
-vrátí se k nějaké „stabilní” verzi, opraví chybu
+vrátí se k nějaké “stabilní” verzi, opraví chybu
 a odešle ji zákazníkům.
 A pak se vrátí k tomu, co dělal{{a}} předtím – jen ještě
 musí zakomponovat opravu chyby i do verze, na které
 pracuje dlouhodobě.
 
 Git na to má takzvané *větve* (angl. *branches*).
-Na jedné „větvi” se pracuje, ale je možné se přepnout do
+Na jedné “větvi” se pracuje, ale je možné se přepnout do
 jiné (třeba starší) větve, udělat pár změn
 a pak se zase přepnout do nové větve a
 pokračovat dál nebo sloučit změny.
@@ -33,7 +33,7 @@ K tomu slouží příkaz `git branch`:
 ```
 
 Je tam jenom jedna a jmenuje se `master`
-– to je tradičně jméno „hlavní” větve.
+– to je tradičně jméno “hlavní” větve.
 
 K vytvoření nové větve znovu použiješ
 `git branch`, jen tomu příkazu dáš navíc
@@ -104,7 +104,7 @@ Všechno zkontroluj přes `gitk --all`.
 
 
 Takhle nějak se dá postupovat v situaci popsané v úvodu:
-opuštění rozpracované verze, přechod na „stabilní”
+opuštění rozpracované verze, přechod na “stabilní”
 verzi `master` a začátek práce v jiné
 části projektu.
 
@@ -142,7 +142,7 @@ Fast-forward
  1 file changed, 5 insertions(+), 1 deletion(-)
 ```
 
-Sloučeno! Ono „`Fast-forward`” znamená, že
+Sloučeno! Ono “`Fast-forward`” znamená, že
 vlastně nebylo co slučovat – jen se do větve
 `master` přidaly nové změny.
 Zkontroluj v `gitk --all`, jak to vypadá.
@@ -158,7 +158,7 @@ kde konflikt nastal.
 Soubor uprav ho tak, jak by měl vypadat, ulož a zadej
 `git commit`.
  
-Ať nastal konflikt nebo ne, vytvoří se „slučovací revize“
+Ať nastal konflikt nebo ne, vytvoří se “slučovací revize”
 (angl. *merge commit*), které – jako každé revizi – můžeš dát popisek.
 
 ```ansi

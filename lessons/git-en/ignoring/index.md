@@ -246,7 +246,7 @@ Changes to be committed:
 
 ## Formát ignorovacího souboru
 
-Ve všech třech „ignorovacích“ souborech lze samozřejmě uvést víc souborů:
+Ve všech třech “ignorovacích” souborech lze samozřejmě uvést víc souborů:
 každý na zvláštní řádek.
 Kromě toho je možné použít několik vychytávek:
 
