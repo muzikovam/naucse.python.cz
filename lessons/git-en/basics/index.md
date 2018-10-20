@@ -1,74 +1,66 @@
 # Git
 
-Ať už programuješ nebo píšeš dokumenty, stává se,
-že vytvoříš několik verzí.
-Tuhle chceš archivovat část, která už není potřeba,
-tamhle chceš svoji práci poslat k ohodnocení,
-nebo dokonce kolegům, kteří na ni spolupracují.
-A když se verze začnou kupit, může být problém se v nich vyznat.
+Whether you code or write documents, often you end up
+with multiple versions of the same file.
+You may want to archive one set of changes that are not needed at the moment,
+then send another set of changes to your colleagues for a review.
+At a certain point, keeping track of all these versios becomes unfeasible.
 
-Část těchto problémů řeší nástroje jako Dropbox či
-Google Drive, se kterými ses možná již setkal{{a}}.
-Tam můžeš například sdílet svůj dokument s dalšími
-lidmi nebo se můžeš vrátit k dřívější verzi dokumentu,
-když něco pokazíš a nemůžeš si vzpomenout, jak to bylo
-předtím. Příklad toho, jak to může vypadat, je zde:
+Tools like Dropbox or Google Drive, which you may know already, can help a bit.
+These tools allow you to share your files easily or to restore their content
+to an earlier point in time.
+Here's an example:
 
 {{ figure(
     img=static('dropbox.png'),
-    alt="Verzovací Rozhraní služby Dropbox"
+    alt="Versioning interface in Dropbox"
 ) }}
 
-V tomto rozhraní ale vidíš pouze verze *jednoho dokumentu* a navíc
-nemůžeš tušit, ke které verzi se to vlastně chceš
-vrátit. Nevidíš ani čím se jednotlivé verze liší.
-Pro větší projekt by byl takový způsob práce
-neefektivní.
+Unfortunatelly, you can only see different versions of a *single file*.
+Also, it's hard to tell which version you might want to restore since
+there is no indication of how individual versions differ.
+A relatively large project wouldn't be manaegable with this approach.
 
-Programátoři proto používají mocnější nástroje na
-správu verzí (angl. version control system. VCS).
-Asi nejpopulárnější z nich je Git, se kterým
-se teď seznámíme.
+Therefore, programmers tend to use more powerful tools
+dubbed *version control system* (VCS).
+Currently the most popular one is Git and we'll learn more about it in this lesson.
 
 > [note]
-> Budeme hodně pracovat s příkazovou řádkou.
-> Jestli se s ní ještě nekamarádíš, koukni se na
-> [úvod]({{ lesson_url('beginners/cmdline') }}).
+> We will rely on the command line.
+> If you not confident working with it yet, look at the
+> [introduction]({{ lesson_url('beginners-en/cmdline') }}).
 > 
-> Nezapomeň: `$` na začátku se nepíše;
-> je tu proto, aby šlo poznat že jde o příkaz.
+> Remember: don't write the `$` at the start.
+> It is shown here to indicate the beginning of each command.
 
 
-## Instalace
+## Installation
 
-Popis instalace Gitu najdeš
-[zde]({{ lesson_url('git/install') }}).
-Jestli jsi instalaci přeskočil{{a}}, projdi si ji teď.
+The process of installing Git is described 
+[here]({{ lesson_url('git/install') }}).
+If you skipped the lesson before, you might want to get back to it now.
 
 
-## Repozitář
+## Repository
 
-Každý projekt, který budeš verzovat, musí mít pro sebe
-vyhrazený adresář.
-Vytvoř si tedy nový adresář a přepni se do něj (pomocí `cd`).
-Pak vytvoř gitový <em>repozitář</em> (angl. repository)
-pomocí příkazu `git init`:
+Each project that you want to version-control needs to be stored in its own directory.
+Create a new directory now and navigate inside (use command `cd`).
+Then, create a new Git <em>repository</em> using the command `git init`:
 
 ```ansi
 ␛[36m$␛[0m git init
 Initialized empty Git repository in ./.git/
 ```
 
-Na první pohled to vypadá, že se nic nestalo.
-Tenhle příkaz totiž vytvořil *skrytý* adresář
-`.git`, do kterého uložil nějaké informace.
-Přesvědč se příkazem `ls -a` (Linux) nebo `dir /a` (Windows).
-Adresář `.git` je schovaný proto, že
-ho spravuje Git a ty bys v něm neměl{{a}} nic měnit.
+At first glance, it looks like nothing happened.
+This command created a *hidden* directory with the name `.git` and stored some information in there.
+You can see it using `ls -a` (Linux) or `dir /a` (Windows).
+`.git` is a hidden directory because it should be managed only by Git
+and you shouldn't be changing anything inside.
 
-V repozitáři zatím nic není.
-Zkus to ověřit příkazem `git status`, který
-vypisuje informace o stavu repozitáře:
+The repository is empty for now.
+You can see for yourself by invoking `git status`, a command that shows information
+about the state of the reposuitory:
 
 ```ansi
 ␛[36m$␛[0m git status
@@ -79,10 +71,9 @@ Initial commit
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
-*„On branch master”* říká něco o větvích, k tomu se vrátíme později.
-*„Initial commit”* říká, že zatím nemáš uloženou žádnou revizi.
-A *„nothing to commit”* říká, že je adresář
-prázdný – nejsou tu žádné soubory k verzování.
+*„On branch master”* refers to so called branches, we'll get back to that later.
+*„Initial commit”* means that there is no revision stored yet.
+And *„nothing to commit”* says that there are no files to be saved and versioned in the directory.
 
 
 ## První revize
