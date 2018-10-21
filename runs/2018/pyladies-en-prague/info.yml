@@ -4,19 +4,28 @@ time: 18:00–20:00
 default_time:
   start: '18:00'
   end: '20:00'
-description: Learn Python from the beginning. No previous knowledge required!
+description: |
+    Learn Python from the beginning. No previous knowledge required!
 long_description: |
+    <br>
     You can find here all materials for the English version of PyLadies
     Czechia.
 
     You can join us on [Facebook](https://www.facebook.com/groups/pyladies.prague.english/)
     where you can ask any question or just follow news (e.g. open registration for the next course).
 
-    You can find official Czech PyLadies here [http://pyladies.cz][PyLadies].
+    You can check official PyLadies Czech webpage here [http://pyladies.cz][PyLadies].
 
     All lectures are for complete beginners.
     Instructions are for Linux, Windows and macOS.
 
+    Thanks <a href="https://www.ca.com/">CA Technologies</a> for
+    sponsoring our course.
+
+    <div style="text-align:center; ">
+        <img src="http://ptc-garage.eu/pyladies-en/ca-technologies-logo.png"
+            style="width:50%;">
+    </div>
     [PyLadies]: http://pyladies.cz/
 derives: pyladies-en
 vars:
@@ -28,91 +37,103 @@ plan:
 - base: install
   date: 2018-09-25
   materials:
+  - lesson: beginners-en/introduction
   - +merge
   - title: Homework (PDF)
-    url: http://ptc-garage.eu/pyladies-en/homework/1-homework.pdf
+    url: http://ptc-garage.eu/pyladies-en/homework/1-handout.pdf
     type: homework
 
 - base: hello
   date: 2018-10-02
   materials:
-  - +merge
+  - lesson: beginners-en/hello-world
+  - lesson: beginners-en/print
+  - lesson: beginners-en/variables
   - title: Homework (PDF)
-    url: http://ptc-garage.eu/pyladies-en/homework/2-homework.pdf
+    url: http://ptc-garage.eu/pyladies-en/homework/2-handout.pdf
     type: homework
 
 - base: loops
   date: 2018-10-09
   materials:
-  - +merge
+  - lesson: beginners-en/comparisons
+  - lesson: beginners-en/and-or
+  - lesson: beginners-en/functions
   - title: Homework (PDF)
-    url: http://ptc-garage.eu/pyladies-en/homework/3-homework.pdf
+    url: http://ptc-garage.eu/pyladies-en/homework/3-handout.pdf
     type: homework
 
 - base: def-str
   date: 2018-10-16
   materials:
+  - lesson: beginners-en/turtle
+  - lesson: beginners-en/while
   - +merge
   - title: Homework (PDF)
-    url: http://ptc-garage.eu/pyladies-en/homework/4-homework.pdf
+    url: http://ptc-garage.eu/pyladies-en/homework/4-handout.pdf
     type: homework
 
-- base: git
-  date: 2018-10-23
-  materials:
-  - +merge
-  - title: Homework (PDF)
-    url: http://ptc-garage.eu/pyladies-en/homework/5-homework.pdf
-    type: homework
+#- base: git
+#  date: 2018-10-23
+#  materials:
+#  - +merge
+#  - title: Homework (PDF)
+#    url: http://ptc-garage.eu/pyladies-en/homework/5-handout.pdf
+#    type: homework
 
 - base: tests
-  date: 2018-10-30
+  date: 2018-10-23
   materials:
   - +merge
 
 - base: list
-  date: 2018-11-06
+  date: 2018-10-30
   materials:
   - +merge
+  - lesson: beginners-en/files
   - title: Homework (PDF)
-    url: http://ptc-garage.eu/pyladies-en/homework/7-homework.pdf
+    url: http://ptc-garage.eu/pyladies-en/homework/7-handout.pdf
     type: homework
 
 - base: foss
+  date: 2018-11-06
+  materials:
+  - lesson: git-en/basics
+  - lesson: git-en/collaboration
+
+- base: pyglet
   date: 2018-11-13
   materials:
   - +merge
 
-- base: pyglet
+- base: dict
+  date: 2018-11-20
+  materials:
+  - +merge
+  - title: Homework (PDF)
+    url: http://ptc-garage.eu/pyladies-en/homework/10-handout.pdf
+    type: homework
+
+- base: class
   date: 2018-11-27
   materials:
   - +merge
 
-- base: dict
+- base: asteroids
   date: 2018-12-04
   materials:
   - +merge
-  - title: Homework (PDF)
-    url: http://ptc-garage.eu/pyladies-en/homework/10-homework.pdf
-    type: homework
 
-- base: class
+- title: Final Project II.
   date: 2018-12-11
+  slug: final
   materials:
-  - +merge
-
-- base: asteroids
-  date: 2018-12-18
-  materials:
-  - +merge
-
-- base: asteroids
-  date: 2018-12-18
-  materials:
-  - +merge
+    - title: Final Project II.
+      url: null
+      type: special
 
 - title: Topic on demand
-  date: 2018-12-25
+  date: 2018-12-18
   slug: tod
   materials:
     - title: Topic on demand

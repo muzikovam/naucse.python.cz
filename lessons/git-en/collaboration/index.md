@@ -1,119 +1,111 @@
 {% set coach_username = var('coach-username') or 'encukou' %}
 
-# Spolupráce
+# Collaboration
 
-„Opravdové” programy zřídka vznikají prací jednoho člověka.
-Víc hlav víc ví, a tak je dobré si na projekt vytvořit tým.
+“Real” programs rarely are created by a single person.
+Two heads are better than one, so it's better to work on a projekt in a team.
 
-Každý člen týmu potřebuje mít přístup k práci ostatních.
-K tomu se dá použít Git: někde na internetu si zařídíme *sdílený repozitář*,
-se kterým se všichni budou synchronizovat.
+Each team member needs to be able to share their progress with others.
+Git can be used exactly for that: you can set up a *shared repository* online
+that your team members will synchronize with.
 
-> [note] Pro samostudium
-> Pokud materiály čteš z domu a máš možnost se
-> v budoucnu dostat na nějaký sraz, zatím tuhle sekci přeskoč.
-> Na sraze pak popros zkušenější programátory, aby ti pomohli.
-> (Nechystáš-li se na sraz, můžeš pokračovat –
-> zvládnout se to dá.)
+> [note] Self-study
+> If you study at home but you plan to attend a coding event soon,
+> skip this section for now.
+> Ask more experienced attendees for help when you get the chance.
+> (Otherwise, keep reading. You can do this.)
 
-> [note] Pro kouče
-> Udělej na GitHubu repozitář jménem `prezencka` a dej do
-> něj soubor se svým jménem. Příklad je na
+> [note] For mentors
+> Create a GitHub repository called `prezencka`. Add a new file
+> with your name to the repository. See an example here:
 > [encukou/prezencka](https://github.com/encukou/prezencka).
-> Nasdílej s účastnicemi příkaz na jeho naklonování (přes https).
+> Share the command to clone your repository using https with other attendees.
 
 
-## Open Source
+## Open-Source
 
-Nejde mluvit o Gitu a spolupráci a nezastavit se chvíli u otevřeného
-zdrojového kódu.
-První programy vznikaly v akademické sféře, kde byly zcela přirozeně sdíleny,
-jako je to s poznatky mezi vědci běžné.
-50\. a 60. léta byla obdobím velké kreativity, kdy vzniklo mnoho z konceptů
-a technologií, které dnes používáme.
-Pak se začalo programování postupně komercializovat a firmy začaly zdrojový
-kód skrývat jako konkurenční výhodu.
-Do té doby víceméně jednolitá komunita programátorů byla nucena se rozdělit.
+We can't talk about Git and collaboration without discussing the open-source code first.
+The first programs came from the academia and were shared freely with the wider community,
+as is common with any scientific research.
+The 1950s and 1960s was the time of great creativity.
+Many concepts and technologies that we use today originate in that era.
+As programming began to move to the commercial sphere, the source code developed
+by companies wasn't being shared anymore in order to maintain competitive advantage.
+The community of programmers, united in the past, has split up.
 
-Některým programátorům tohle skrývání kódu hluboce vadilo.
-Roku 1985 publikoval
-[Richard Stallman](https://en.wikipedia.org/wiki/Richard_Stallman)
-[GNU Manifesto](https://www.gnu.org/gnu/manifesto.en.html),
-kde vysvětlil, proč hodlá vytvořit operační systém s otevřeným kódem a
-odstartoval tak hnutí svobodného softwaru.
-To prosazuje 4 následujících svobod (převzato
-z [Wikipedie](https://cs.wikipedia.org/wiki/Svobodn%C3%BD_software)):
+Some programmers loathed the closed source approach.
+In 1985, [Richard Stallman](https://en.wikipedia.org/wiki/Richard_Stallman)
+published [GNU Manifesto](https://www.gnu.org/gnu/manifesto.en.html)
+where he proposed to create an open-source operating system, 
+thus starting the free software movement.
+The manifesto lists the following four freedoms (taken from
+[Wikipedia](https://en.wikipedia.org/wiki/Free_software)):
 
 <ol start="0">
-<li>svoboda používat program za jakýmkoliv účelem,</li>
-<li>svoboda studovat, jak program pracuje a možnost přizpůsobit ho svým potřebám,</li>
-<li>svoboda redistribuovat kopie programu,</li>
-<li>svoboda vylepšovat program a zveřejňovat zlepšení, aby z nich mohla mít prospěch celá komunita.</li>
+<li>freedom to run the program for any purpose.</li>
+<li>freedom to study how the program works, and change it to make it do what you wish.</li>
+<li>freedom to redistribute and make copies so you can help your neighbor.</li>
+<li>freedom to improve the program, and release your improvements (and modified versions in general)
+to the public, so that the whole community benefits.</li>
 </ol>
 
-Dnes je spousta projektů s otevřeným zdrojovým kódem (tzv. *open-source* projektů)
-dostupná na Internetu a každý je používáme.
-Jejich další sdílení je upraveno jednou z licencí,
-které tyto základní svobody zaručují.
+Today, many open-source projects are available freely on the Internet for anone to use them.
+Their availability is governed by one of the licenses that guarantee these fundamental freedoms.
 
-Ne všechny jsou v Pythonu (a těm co jsou zatím
-nebudeš všem rozumět). Ne všechny jsou v Gitu.
-Ne všechny jsou kvalitní – protože si
-každý může zveřejnit co chce, na Internetu se válí
-spousta nedodělků, opuštěných nápadů a nepodařených experimentů.
-A bohužel, ne všechny projekty mají přátelské autory.
+Not all these projects were created using Python (and for now,
+it might be difficult for you to understand those that were).
+Not all are hosted using Git.
+Neither are all of a high quality; anyone can publish any piece of their own work,
+so the Internet is filled with unfinished projects, abandoned ideas and failed experiments.
+Unfortunatelly, not all authors are friendly either.
 
-Na druhou stranu ale open-source programy
-mají svoje výhody: nejenom že se z nich může kdokoli
-učit, ale každý může i zkontrolovat, jestli
-dělají to, co dělat mají.
-Populární open-source programy tě například
-pravděpodobně nebudou špehovat (tj. hlásit autorovi,
-co na počítači děláš), ani většinou neobsahují
-reklamy: kdyby to dělaly, najde se
-někdo kdo tyhle „funkce” odstraní a lidi – časem –
-začnou používat opravenou verzi.
+On the other hand, open-source applications have their benefits too:
+not only can they help others to learn how to create them,
+anyone can check that the code is doing exactly what it's supposed to.
+For example, popular open-source applications are unlikely to spy on you
+(i.e. record what you do with your computer and share that with somebody else).
+Advertisements are rarely a part of the apps too.
+Were any of these “features” included, somebody would remove them
+and release their alternative version of the project eventually.
 
-Některé příklady populárních open-source projektů:
+Few examples of popular open-source projects:
 
 * [Mozilla Firefox](https://github.com/mozilla/gecko-dev),
   [Chromium](https://chromium.googlesource.com/chromium/src.git)
-  (prohlížeče)
+  (internet browsers)
 * [Atom](https://github.com/atom/atom),
   [gedit](https://github.com/GNOME/gedit)
-  (textové editory)
+  (text editors)
 * [CPython](https://github.com/python/cpython)
-  (jazyk Python)
+  (the Python language)
 * [Linux](https://github.com/torvalds/linux),
   [Android](https://github.com/aosp-mirror)
-  (jádra operačních systémů)
+  (kernels of operating systems)
 * [Pytest](https://github.com/pytest-dev/pytest/)
-  (pythonní knihovna na testování)
+  (test library for Python)
 * [Django](https://github.com/django/django),
   [Flask](https://github.com/mitsuhiko/flask),
   [Requests](https://github.com/kennethreitz/requests)
-  (webové knihovny pro Python)
+  (web libraries for Python)
 * [NumPy](https://github.com/numpy/numpy),
   [Jupyter](https://github.com/jupyter/notebook),
   [Matplotlib](https://github.com/matplotlib/matplotlib)
-  (pythonní knihovny pro vědce a analytiky)
-* [Materiály](https://github.com/pyvec/naucse.python.cz) k tomuto kurzu
+  (Python libraries for scientists and analysts)
+* [Materials](https://github.com/pyvec/naucse.python.cz) for this course
 
-Jak vidno z posledního příkladu, nejen softwarové
-projekty se dají vést takhle veřejně.
-Tento kurz vychází z principů open source:
-všechno know-how je sdílené a budeme rádi, když
-se zapojíš.
+As shown by the last example, the free and open model is not only limited to software projects.
+This course is based on the open-source principles:
+all know-how is shared and we will be glad when you get involved.
 
-Až příště uvidíš v materiálech chybu (nebo jestli o nějaké víž už teď),
-dnes se dozvíš, jak ji opravit!
+Today you'll learn how you can collaborate on a Git-hosted project.
+The next time you notice an error in these materials (or if you know of one already),
+you'll be able to fix it yourself!
 
-A co tvůj kód? Chceš ho taky dávat takhle veřejně k dispozici?
-Nutné to samozřejmě není – Git se dá používat i
-v uzavřeném týmu – ale na druhou stranu,
-máš důvod proč to nedělat?
-Zveřejňovat zdrojový kód se hodí už jen pro to,
-aby ti s ním mohli zkušenější programátoři snadněji pomáhat.
+Finally, what about your own code? Would you like to share it freely in a similar fashion?
+It's not mandatory of course, Git can be used even by a closed team; on the other hand,
+why wouldn't you share it?
+Making your code public can have one more benefit:
+more experienced programmers can help you improve it very easily.
 
 
 ## GitHub
