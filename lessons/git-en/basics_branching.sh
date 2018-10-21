@@ -14,7 +14,7 @@ END
 git status
 git add basnicka.txt
 git status
-GIT_EDITOR='echo "První revize" >' git commit
+GIT_EDITOR='echo "First revision" >' git commit
 
 git status
 git show
