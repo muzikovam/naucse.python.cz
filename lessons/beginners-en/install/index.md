@@ -1,38 +1,36 @@
-# Instalace Pythonu
+# Python installation
 
-V této sekci uděláme dvě věci:
+We will do two things in this section:
 
-* Nainstalujeme Python a Virtualenv
-* Vytvoříme si virtuální prostředí pro práci v Pythonu
+* We will install Python and Conda with virtual environments
+* We will create virtual environment
 
-Možná se ptáš, proč je to všechno potřeba?
+You might ask why we all need this.
 
-Python je jak programovací jazyk (způsob, jak říkat počítačům, co dělat),
-tak program, který potřebujeme, aby se s námi počítač tím jazykem domluvil.
+Python is programming language (way how to tell computers what to do)
+and also program we need so we can talk to our computer in Python language.
 
-Virtuální prostředí pak je něco, co zajistí, aby se všechny počítače chovaly
-zhruba stejně.
-Až ho zprovozníme, nebudeme potřebovat materiály zvlášť pro Linux, zvlášť pro
-Windows a zvlášť pro Mac.
+Virtual environment is something that will take care of that all computers
+will behave very similar.
+After we will activate it we won't need special materials for Linux,
+Windows and Macs.
+
 
 > [note]
-> V budoucnu využijeme druhou výhodu: každé virtuální prostředí je oddělené od
-> ostatních, takže když doinstalujeme nějakou knihovnu (rozšíření pro Python),
-> projeví se to jen v jednom virtuálním prostředí.
-> Pokud by se při práci na projektu něco pokazilo, neohrozí to další projekty
-> ve tvém počítači.
+> We will use in the future another advantage of virtual environments: 
+> every venv is separated from each other so if we will install some
+> module (extension for Python) we will have it in just that environment
+> where we want to have it. If that library would broke something in your 
+> project another projects will be safe. 
 
-Instalace samotná je na každém počítači jiná.
-Vyber si stránku podle svého operačního systému:
+Choose page regarding your operation system:
 
 * [Linux]({{ subpage_url('linux') }})
 * [Windows]({{ subpage_url('windows') }})
 * [macOS]({{ subpage_url('macos') }})
 
-Pokud máš jiný systém než Linux, Windows nebo macOS,
-nebo pokud ke svému počítači neznáš administrátorské heslo,
-{% if var('coach-present') -%}
-poraď se s koučem hned, jinak se ptej, až bude něco nejasné.
-{%- else -%}
-napiš nám prosím e-mail. {# XXX vyřešit kam poslat samostudenty co mají problém #}
-{%- endif %}
+
+If you have other system or if you have some other problem, don't worry
+to ask coach (raise red postit paper) or send e-mail.
+
+

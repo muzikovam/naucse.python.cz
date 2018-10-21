@@ -1,108 +1,41 @@
-# Instalace Pythonu pro Windows
+# Python installation for Windows 
 
-Běž na [stahovací stránku Pythonu](https://www.python.org/downloads/)
-a stáhni si instalátor nejnovější stabilní verze Pythonu. Od verze 3.6.0 má Python ve Windows jistá
-vylepšení, která se nám budou hodit, a proto stahuj jen verzi **3.6.0 nebo novější**.
+Go to [the Python website](https://www.python.org/downloads/) and 
+download the latest stable version of Python. From version 3.6.0.
+there are some enhancements for Windows so download only version
+ **3.6.0 and above**.
 
-Jak poznat, který instalátor je ten pravý?
-Pokud má tvůj počítač 64bitovou verzi Windows, stáhni si *Windows x86-64 executable installer*.
-Pokud máš starší počítač s 32bitovými Windows, stáhni si *Windows x86 executable installer*.
+How to know which installer is the right one?
+If your computer has 64bit Windows then download *Windows x86-64 executable installer*.
+If your Windows is only 32bit download *Windows x86 executable installer*.
+
 
 > [note]
-> Kde zjistíš, zda máš 32bitové nebo 64bitové Windows? Stačí otevřít nabídku
-> **Start**, vyhledat „Systém“ a otevřít **Systémové informace**.
-> Pokud máš novější počítač, téměř jistě budeš mít 64bitový systém.
+> If you don't know what Windows version do you have just open **Start**, 
+> search **System** and open **System information**.
 >
 > {{ figure(
     img=static('windows_32v64-bit.png'),
-    alt='Screenshot zjišťování verze systému',
+    alt='Windows version',
 ) }}
 
-Pak instalátor spusť.
-Na začátku instalace zaškrtni **Install launcher for all Users**
-a také **Add Python 3.6 to PATH**.
-Tyto volby ti zjednoduší vytvoření virtuálního prostředí.
+Then you can run the installer.
+In the beginning check **Install launcher for all Users**
+and also **Add Python 3.6 to PATH**.
+This will make creating venv much easier.
 
-(Jestli nemáš administrátorské oprávnění, volbu
-*Install launcher for all Users* nezaškrtávej.)
+(If you don't have admin rights don't check *Install launcher for all Users*.)
 
 {{ figure(
     img=static('windows_add_python_to_path.png'),
-    alt='Screenshot instalace Pythonu',
+    alt='Python installation',
 ) }}
 
-Pak zmáčkni **Install now** a dále se drž instrukcí.
+Then click **Install now** and follow the instructions.
 
-Máš-li otevřenou příkazovou řádku, po instalaci Pythonu ji zavři a otevři
-novou.
-Instalace mění systémové nastavení, které se musí načíst znovu.
+If you have your command line open, close it and open again.
 
+## [conda installation] 
+After succesfull installation follow how to [create virtual environment](https://conda.io/docs/user-guide/tasks/manage-environments.html)
 
-## Vytvoření virtuálního prostředí
-
-<!-- Pozn. Tahle sekce je velice podobná pro Linux, Mac i Windows;
-     měníš-li ji, koukni se jestli není změna potřeba i jinde. -->
-
-{%- if var('pyladies') -%}
-{% set rootname = 'pyladies' %}
-{%- else -%}
-{% set rootname = 'naucse-python' %}
-{%- endif -%}
-
-Až bude Python nainstalovaný, vytvoř virtuální prostředí.
-
-Zvol si adresář (složku), ve které budeš mít soubory k PyLadies.
-Může to být třeba `C:\{{ rootname }}`.
-
-Zvolený adresář po vytvoření nesmíš přesouvat jinam – když to uděláš,
-přestane virtuální prostředí fungovat.
-Proto ho nedoporučuji vytářet na Ploše.
-
-> [note]
-> Kdybys někdy chtěl{{a}} adresář přece jen přesunout,
-> musel{{a}} bys smazat virtuální prostředí a vytvořit nové.
-
-Ve zbytku materiálů budeme tento adresář nazývat <code class="pythondir">~/{{ rootname }}</code>,
-i když se u tebe pravděpodobně jmenuje jinak.
-Takže kdykoli od teď uvidíš <code class="pythondir">~/{{ rootname }}</code>,
-doplň místo toho „svůj“ adresář.
-
-Teď když je tenhle adresář vytvořený, otevři [příkazovou řádku]({{ lesson_url('beginners/cmdline') }})
-a příkazem `cd` se do něj přepni.
-Pak vytvoř virtuální prostředí:
-
-```dosvenv
-> py -3 -m venv venv
-```
-
-Tím se nám vytvořil adresář <code><span class="pythondir">~/{{ rootname }}</span>\venv</code>,
-ve kterém jsou soubory s virtuálním prostředím.
-Můžeš se podívat dovnitř, ale nikdy tam nic neměň.
-
-
-## Aktivace virtuálního prostředí
-
-Nakonec virtuální prostředí aktivuj:
-
-<div class="highlight">
-<pre><code><span class="gp">&gt;</span> <span class="pythondir">~/{{ rootname }}</span>\venv\Scripts\activate
-</code></pre></div>
-
-> [note]
-> Nezapomeň místo <span class="pythondir">~/{{ rootname }}</span> zadat
-> „svůj“ adresář!
-
-Po spuštění tohoto příkazu by se mělo na začátku příkazové řádky
-(před `>`) objevit slovo `(venv)`.
-Tak poznáš, že je virtuální prostředí *aktivní*.
-
-Tenhle příkaz si zapiš. Budeš ho muset zadat vždycky, když pustíš příkazovou řádku,
-než se pustíš do programování.
-{% if var('pyladies') -%}
-Máš-li vytištěné <a href="http://pyladies.cz/v1/s001-install/handout/handout.pdf">domácí projekty</a>,
-můžeš si ho poznačit tam :)
-{%- endif %}
-
-Zkusme teď nainstalovaný Python použít!
-To už bude stejné pro tebe i pro lidi na Linuxu a Macu.
-Sejdeme se na [další stránce]({{ lesson_url('beginners/first-steps') }}), kde uděláme první krůčky s Pythonem.
+[conda installation]: https://conda.io/docs/user-guide/install/windows.html

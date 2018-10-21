@@ -17,8 +17,6 @@ plan:
   - lesson: beginners-en/install
   - lesson: beginners-en/first-steps
   - lesson: beginners-en/install-editor
-  - lesson: git-en/install
-
 
 - title: First program
   slug: hello
@@ -47,6 +45,7 @@ plan:
 - title: Git
   slug: git
   materials:
+  - lesson: git-en/install
   - lesson: git-en/basics
   - lesson: git-en/branching
   - title: Git cheatsheet
