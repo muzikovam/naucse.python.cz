@@ -34,7 +34,7 @@ Podadresář `02` musíš vytvořit.
 Do něj pak soubor ulož jako `ahoj.py`.
 
 Pokud máš v ukládacím okýnku možnost zvolit <em>kódování</em>, zvol <code>UTF-8</code>.
-Můžeš–li zvolit typ souboru, zvol <code>.py</code> nebo „všechny soubory“.
+Můžeš–li zvolit typ souboru, zvol <code>.py</code> nebo “všechny soubory”.
 
 
 Některé systémy a editory se snaží přípony jako <code>.py</code> schovávat
@@ -75,7 +75,7 @@ Jestli to nefunguje, zkontroluj, že:
 
 * Máš zapnuté virtuální prostředí.
   (Na příkazové řádce se musí ukazovat <code>(venv)</code>;
-  pokud tam není, použij příkaz „activate“ z [minula]({{ lesson_url('beginners/install') }}).)
+  pokud tam není, použij příkaz “activate” z [minula]({{ lesson_url('beginners/install') }}).)
 * Jsi ve správném adresáři, <code><span class="pythondir">~/{{ rootname }}</span>/02</code>.
   (Za <span class="pythondir">~/{{ rootname }}</span> musíš doplnit adresář, který jsi vytvořila minule.)
 * Soubor `ahoj.py` obsahuje správný příkaz, včetně všech uvozovek a závorek.
@@ -105,7 +105,7 @@ zkušenějšího programátora. <!-- XXX: where to direct people? -->
 > Jako v češtině se po otvírací závorce a za
 > ozavírací závorkou nepíše mezera.
 > Na rozdíl od češtiny ale mezeru nepiš ani mezi `print` a závorkou.
-> „Správně“ je tedy:
+> “Správně” je tedy:
 >
 > ```python
 > print("Ahoj světe!")

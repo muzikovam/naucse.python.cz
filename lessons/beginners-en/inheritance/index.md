@@ -76,7 +76,7 @@ Příkazem `class Kotatko(Zviratko):`
 *dědí* ze třídy `Zviratko`
 (angl. *inherits* from `Zviratko`).
 Případně se můžeš setkat s jinými termíny:
-„je odvozená” ze třídy `Zviratko`,
+“je odvozená” ze třídy `Zviratko`,
 (angl. *derived from*),
 nebo ji “rozšiřuje” (angl. *extends*).
 A když už jsme u terminologie, odvozeným třídám se
@@ -206,13 +206,13 @@ protože každé koťátko *je* zvířátko.
 > V takových případech dává dědičnost smysl.
 >
 > Někdy se ale stane, že tuhle pomůcku zkusíš použít a vyjde ti
-> nesmysl jako „každé auto je volant”.
+> nesmysl jako “každé auto je volant”.
 > V takovém případě dědičnost nepoužívej.
-> I když jak auto tak volant se dají „otočit doprava”,
+> I když jak auto tak volant se dají “otočit doprava”,
 > u každého to znamená něco jiného – a určitě nejde auto
 > použít kdekoli, kde bych chtěl{{a}} použít volant.
-> Takže v tomto případě je lepší si říct „každé auto
-> *má* volant”, stejně jako „každé kotě
+> Takže v tomto případě je lepší si říct “každé auto
+> *má* volant”, stejně jako “každé kotě
 > *má* jméno”, udělat dvě nezávislé třídy a napsat něco jako:
 >
 > ```python

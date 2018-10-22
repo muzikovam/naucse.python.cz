@@ -12,7 +12,7 @@ forward(50)
 getcanvas().postscript(file='obrazek.ps')
 END
 
-cat > poznamky.txt << END
+cat > notes.txt << END
 Tajné!
 END
 
@@ -36,7 +36,7 @@ git status
 
 
 cat > .git/info/exclude << END
-/poznamky.txt
+/notes.txt
 END
 
 git status
@@ -50,5 +50,5 @@ git config --global core.excludesfile ~/.gitignore_global
 git status
 
 
-GIT_EDITOR='echo "První revize" >' git commit
+GIT_EDITOR='echo "First revision" >' git commit
 git status

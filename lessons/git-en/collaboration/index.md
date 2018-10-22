@@ -16,9 +16,9 @@ that your team members will synchronize with.
 > (Otherwise, keep reading. You can do this.)
 
 > [note] For mentors
-> Create a GitHub repository called `prezencka`. Add a new file
+> Create a GitHub repository called `attendance`. Add a new file
 > with your name to the repository. See an example here:
-> [encukou/prezencka](https://github.com/encukou/prezencka).
+> [encukou/attendance](https://github.com/encukou/attendance).
 > Share the command to clone your repository using https with other attendees.
 
 
@@ -128,20 +128,20 @@ Pro začátek zkusíme práci s repozitářem, který už vytvořil někdo jin�
 V příkazové řádce zadej příkaz, který ti oznámí kouč; něco jako
 
 ```console
-$ git clone https://github.com/{{coach_username}}/prezencka
+$ git clone https://github.com/{{coach_username}}/attendance
 ```
 
 Vytvoří se ti nový repozitář – adresář se jménem
-`prezencka`, ve kterém je nějaký soubor.
+`attendance`, ve kterém je nějaký soubor.
 
 
 Na URL (adresu), kterou jsi v tomhle příkladě
 použil{{a}}, se můžeš podívat i v prohlížeči.
 Uvidíš seznam souborů a spoustu odkazů k
-informacím o repozitáři (například pod „commits”
+informacím o repozitáři (například pod “commits”
 je historie).
 
-Přepni se do nového adresáře (`cd prezencka`)
+Přepni se do nového adresáře (`cd attendance`)
 a zkus se podívat na historii (`gitk` nebo `git log`).
 Možná je krátká, ale hlavně, že nějaká je.
 Máš na počítači kopii projektu, který založil někdo jiný!
@@ -153,21 +153,21 @@ Teď se do projektu zapoj.
 Přidej soubor se svým jménem (nebo přezdívkou)
 a dej ho do gitu (`git add jmeno.txt`, `git commit`).
 
-Teď zbývá „jen” změnu začlenit do původního sdíleného repozitáře.
+Teď zbývá “jen” změnu začlenit do původního sdíleného repozitáře.
 To ale není jen tak: repozitář, který jsi
 naklonoval{{a}}, patří koučovi. A tomu by se asi
 nelíbilo, kdyby kdokoliv na Internetu mohl přijít
 a nahrát mu do repozitáře změny.
 
 Spousta míst na Internetu funguje tak, že vybraná
-skupina lidí má „přístup”: můžou dělat změny,
+skupina lidí má “přístup”: můžou dělat změny,
 jak se jim líbí.
 
 S Gitem se používá jiný přístup:
 změny nahraješ do *vlastního* sdíleného
 repozitáře a majiteli původního projektu napíšeš
 žádost o začlenění těch změn (angl. *pull request*).
-Může to být třeba mail se slovy „Hele, na té a té
+Může to být třeba mail se slovy “Hele, na té a té
 adrese mám nějaké změny, které by se ti mohli hodit!
 Přidej je do svého projektu!”
 
@@ -186,10 +186,10 @@ zmáčknout tlačítko). Pojďme se podívat, jak na to.
 
 Přihlaš se na GitHub a pak zajdi na adresu
 kterou jsi použil{{a}} pro `git clone`.
-Vlevo nahoře najdi tlačítko „Fork” a klikni na něj.
+Vlevo nahoře najdi tlačítko “Fork” a klikni na něj.
 Tím si vytvoříš na GitHubu vlastní kopii repozitáře:
 adresa by měla být něco jako
-<code>https://github.com/<i>tvojejmeno</i>/prezencka</code>.
+<code>https://github.com/<i>tvojejmeno</i>/attendance</code>.
 
 
 > [note]
@@ -216,11 +216,11 @@ Třeba:
 
 ```console
 $ git remote -v
-origin  https://github.com/{{coach_username}}/prezencka (fetch)
-origin  https://github.com/{{coach_username}}/prezencka (push)
+origin  https://github.com/{{coach_username}}/attendance (fetch)
+origin  https://github.com/{{coach_username}}/attendance (push)
 ```
 
-Tenhle výstup znamená, že pod zkratkou „origin”
+Tenhle výstup znamená, že pod zkratkou “origin”
 se schovává adresa, ze které jsi repozitář
 naklonoval{{a}}.
 
@@ -229,17 +229,17 @@ Nezapomeň nahradit <i>tvojejmeno</i> za jméno účtu,
 který máš na GitHubu ty. (Pozor, v příkazu je <i>tvojejmeno</i> dvakrát!)
 
 <div class="highlight codehilite">
-<pre><code><span class="gp">$</span> git remote add <i>tvojejmeno</i> https://github.com/<i>tvojejmeno</i>/prezencka
+<pre><code><span class="gp">$</span> git remote add <i>tvojejmeno</i> https://github.com/<i>tvojejmeno</i>/attendance
 </code></pre></div>
 
 a zkontroluj si, že se to povedlo:
 
 <div class="highlight codehilite">
 <pre><code><span class="gp">$</span> git remote -v
-<span class="go">origin  git@github.com:{{coach_username}}/prezencka.git (fetch)</span>
-<span class="go">origin  git@github.com:{{coach_username}}/prezencka.git (push)</span>
-<span class="go"><i>tvojejmeno</i>      https://github.com/<i>tvojejmeno</i>/prezencka (fetch)</span>
-<span class="go"><i>tvojejmeno</i>      https://github.com/<i>tvojejmeno</i>/prezencka (push)</span>
+<span class="go">origin  git@github.com:{{coach_username}}/attendance.git (fetch)</span>
+<span class="go">origin  git@github.com:{{coach_username}}/attendance.git (push)</span>
+<span class="go"><i>tvojejmeno</i>      https://github.com/<i>tvojejmeno</i>/attendance (fetch)</span>
+<span class="go"><i>tvojejmeno</i>      https://github.com/<i>tvojejmeno</i>/attendance (push)</span>
 </code></pre></div>
 
 Tolik k nastavení – `git remote add`
@@ -256,7 +256,7 @@ což znamená: pošli na adresu uloženou pod zkratkou
 větev `master`.
 
 Funguje? Podívej se na
-<code>https://github.com/<i>tvojejmeno</i>/prezencka</code>
+<code>https://github.com/<i>tvojejmeno</i>/attendance</code>
 v prohlížeči a ujisti se, že tam tvoje změny jsou.
 
 
@@ -301,11 +301,11 @@ který máš u sebe na počítači.)
 
 To se dělá příkazem
 `git pull origin master` (stáhni změny
-z větve „master” z adresy pod zkratkou „origin”).
+z větve “master” z adresy pod zkratkou “origin”).
 Pomocí `gitk --all` nebo `git log`
 se můžeš podívat, jak se projekt mezitím vyvinul.
 
-Gratuluji! Právě jsi {{gnd('prošel', 'prošla')}} „kolečkem“,
+Gratuluji! Právě jsi {{gnd('prošel', 'prošla')}} “kolečkem”,
 které většina programátorů dělá denně: udělání nějaké změny,
 odeslání kolegům na kontrolu a začlenění a stažení změn od ostatních.
 
@@ -317,7 +317,7 @@ na GitHubu najdeš chybu, ale nemáš čas nebo
 znalosti, abys ji opravil{{a}}. V takovém případě
 často na GitHubu na stránce projektu pod záložkou *Issues*
 najdeš seznam nahlášených problémů.
-Nenajdeš-li mezi nimi „svoji” chybu, můžeš ji
+Nenajdeš-li mezi nimi “svoji” chybu, můžeš ji
 nahlásit – stačí kliknout na *New Issue*
 a můžeš psát, kdy chyba nastává, co program dělá
 špatně a co by měl dělat místo toho.

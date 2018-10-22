@@ -108,7 +108,7 @@ if not (a == b):
 
 > [note]
 > Zatím `assert` nepoužívej jinde než v testovacích funkcích.
-> V „normálním” kódu má `assert` vlastnosti,
+> V “normálním” kódu má `assert` vlastnosti,
 > do kterých teď nebudeme zabředávat.
 
 
@@ -118,7 +118,7 @@ Testy se spouští zadáním příkazu
 `python -m pytest -v` následovaným názvem souboru s testy.
 Tedy v překladu: <strong>Python</strong>e, pusť
 <strong>m</strong>odul <strong>pytest</strong>,
-v „ukecaném” režimu (angl. <strong>v</strong>erbose) nad zadaným souborem.
+v “ukecaném” režimu (angl. <strong>v</strong>erbose) nad zadaným souborem.
 
 ```ansi
 $ python -m pytest -v test_secteni.py
@@ -147,7 +147,7 @@ usnadnit nalezení a opravu chyby.
 > lze též uvést adresář a `pytest` vyhledá testy v něm.
 
 Zkus si změnit funkci `secti` (nebo její test) a podívat se,
-jak to vypadá když test „neprojde“.
+jak to vypadá když test “neprojde”.
 
 
 ## Testovací moduly
@@ -168,16 +168,16 @@ Test by měl opět projít.
 
 ## Spouštěcí moduly
 
-Automatické testy musí projít „bez dozoru“.
+Automatické testy musí projít “bez dozoru”.
 V praxi se často automaticky spouští, případné chyby se automaticky
 oznamují (např. e-mailem) a fungující kód se automaticky
 začne používat dál (nebo se rovnou vydá zákazníkům).
 
 Co to znamená pro nás?
-Funkce `input` v testech nefunguje. Nemá koho by se zeptala; „za klávesnicí“
+Funkce `input` v testech nefunguje. Nemá koho by se zeptala; “za klávesnicí”
 nemusí nikdo sedět.
 
-To může někdy „ztěžovat práci“. Ukážeme si to na složitějším projektu:
+To může někdy “ztěžovat práci”. Ukážeme si to na složitějším projektu:
 na 1D piškvorkách.
 
 > [note]
@@ -273,18 +273,18 @@ Testům, které kontrolují že se program za správných podmínek chová sprá
 se říká *pozitivní testy*.
 Můžeš ale testovat i reakci programu na špatné nebo neočekávané podmínky.
 
-Testy, které kontrolují reakci na „špatný“ vstup,
+Testy, které kontrolují reakci na “špatný” vstup,
 se jmenují *negativní testy*.
 Můžou kontrolovat nějaký negativní výsledek (např.
 že volání jako <code>cislo_je_sude(7)</code> vrátí `False`),
-a nebo to, že nastane „rozumná“ výjimka.
+a nebo to, že nastane “rozumná” výjimka.
 
 Například funkce `tah_pocitace` by měla způsobit
 chybu (třeba `ValueError`), když je herní pole už plné.
 
 > [note]
 > Vyvolat výjimku je mnohem lepší než alternativy, např. kdyby takové volání
-> „tiše“ – bez oznámení – zablokovalo celý program.
+> “tiše” – bez oznámení – zablokovalo celý program.
 > Když kód pak použiješ ve větším programu,
 > můžeš si být jistá, že při špatném volání
 > dostaneš srozumitelnou chybu – tedy takovou,

@@ -1,6 +1,6 @@
 # Spolupráce a Git
 
-„Opravdové” programy zřídka vznikají prací jednoho člověka. Víc hlav víc ví, a tak je dobré si na projekt vytvořit tým.
+“Opravdové” programy zřídka vznikají prací jednoho člověka. Víc hlav víc ví, a tak je dobré si na projekt vytvořit tým.
 Každý člen týmu potřebuje mít přístup k práci ostatních. Jak ale zařídit to, aby několik lidí mohlo najednou upravovat
 stejné části (soubory) programu? 
 
@@ -26,10 +26,10 @@ Git je program, který se stará o to, abyste ve složce mohli dělat různé ex
 Každá verze má ale popis, který jste jí sami dali, takže slouží i jako dobrá dokumentace projektu.
 
 A co víc – Git vám dovoluje sdílet kód s ostatními programátory.
-Spousta míst na Internetu funguje tak, že vybraná skupina lidí má „přístup”: můžou dělat změny, jak se jim líbí.
+Spousta míst na Internetu funguje tak, že vybraná skupina lidí má “přístup”: můžou dělat změny, jak se jim líbí.
 S Gitem se používá jiný model: změny nahrajeme do vlastního sdíleného repozitáře 
 a majiteli původního projektu napíšeme žádost o začlenění těch změn (angl. pull request). 
-Může to být třeba mail se slovy „Hele, na té a té adrese mám nějaké změny, které by se ti mohly hodit! Přidej je do svého projektu!” 
+Může to být třeba mail se slovy “Hele, na té a té adrese mám nějaké změny, které by se ti mohly hodit! Přidej je do svého projektu!” 
 
 Výhoda je v tom, že se do projektu ‒ pokud je veřejný ‒ může zapojit kdokoliv. 
 Přispěvatel se nemusí předem ptát, nemusí dokazovat že je důvěryhodná osoba, stačí něco změnit a poslat. 
@@ -44,8 +44,8 @@ Služba [GitHub](https://github.com) umožňuje vytvořit si vlastní sdílený 
 Podobných služeb existuje víc (např. bitbucket.org, gitlab.com). Všechny fungují podobně; GitHub je momentálně nejpopulárnější.
 
 Kdybyste měli v různých kopiích repozitáře zmatek, přijde vhod malé vysvětlení: jedna kopie je původní projekt na GitHubu, 
-kam správce projektu dává aktuální „oficiální verzi”.
-Další kopie na GitHubu je „vaše” a můžete si do ní nahrát cokoliv
+kam správce projektu dává aktuální “oficiální verzi”.
+Další kopie na GitHubu je “vaše” a můžete si do ní nahrát cokoliv
 (nejčastěji se v ní ale zveřejňují změny, které můžou být užitečné pro ostatní).
 A třetí kopii repozitáře máte u sebe na počítači.
 
@@ -68,15 +68,15 @@ jen Gitu řekneme, že z něj chceme ten repozitář udělat. To má za následe
 Naším dnešním cílem je ale přispět do projektu, který založil někdo jiný. Proto použijeme příkaz `git clone` ke stažení vzdáleného repozitáře.
 
 ```console
-$ git clone https://github.com/asgeirrr/prezencka
+$ git clone https://github.com/asgeirrr/attendance
 ```
 
-V aktuálním adresáři se nám vytvořil podadresář `prezencka`, který obsahuje všechny soubory, které vidíme ve webovém rozhraní na [GitHubu](https://github.com/asgeirrr/prezencka).
+V aktuálním adresáři se nám vytvořil podadresář `attendance`, který obsahuje všechny soubory, které vidíme ve webovém rozhraní na [GitHubu](https://github.com/asgeirrr/attendance).
 
 
 #### Stav repozitáře (`git status`)
 
-Velmi často potřebujeme zjistit současný stav repozitáře. Navigujte v příkazové řádce do adresáře `prezencka` a zadejte `git status`. Git nám odpoví:
+Velmi často potřebujeme zjistit současný stav repozitáře. Navigujte v příkazové řádce do adresáře `attendance` a zadejte `git status`. Git nám odpoví:
 
 ```console
 $ git status
@@ -87,7 +87,7 @@ nothing to commit, working tree clean
 
 Git nám v tuto chvíli poskytl 3 informace:
 
-1. Že jsme na větvi `master`. Git umožňuje pracovat na více věcích současně pomocí tzv. *větví* mezi kterými můžeme přepínat. Pak se na na disku „objeví” verze souborů v dané větvi. My si dnes vystačíme s jednou hlavní větví, která se tradičně jmenuje `master`.
+1. Že jsme na větvi `master`. Git umožňuje pracovat na více věcích současně pomocí tzv. *větví* mezi kterými můžeme přepínat. Pak se na na disku “objeví” verze souborů v dané větvi. My si dnes vystačíme s jednou hlavní větví, která se tradičně jmenuje `master`.
 2. Že naše větev `master` je aktuální vůči větvi na vzdáleném repozitáři (origin) na GitHubu.
 3. Že jsme neudělali žádné změny oproti poslední verzi souborů, což je pravda.
 
@@ -97,9 +97,9 @@ Už jsme několikrát zmínili, že Git je verzovací systém. Jak že to ale so
 V podstatě mu musíme dát příkaz, aby zmrazil současný stav repozitáře, tzv. vytvořit *revizi*.
 Pak můžeme dělat další změny, ale už vždy budeme schopni se k této revizi vrátit.
 
-Přidejte do adresáře `prezencka` soubor `vase_jmeno.txt`, např. tedy `magdalena_rettigova.txt`
+Přidejte do adresáře `attendance` soubor `vase_jmeno.txt`, např. tedy `magdalena_rettigova.txt`
 a do něj napište svoje současné povolání nebo cokoliv jiného.
-Zkontrolujte současný stav repozitáře pomocí `git status`: Git oznámí, že v adresáři je soubor, o kterém ještě „neví“. 
+Zkontrolujte současný stav repozitáře pomocí `git status`: Git oznámí, že v adresáři je soubor, o kterém ještě “neví”. 
 
 ```console
 $ git status
@@ -131,7 +131,7 @@ Changes to be committed:
         new file:   magdalena_rettigova.txt
 ```
 
-To, co je zelené („changes to be committed“), se přidá do další revize (angl. commit), kterou vytvoříme. Pojďme tedy vytvořit revizi: 
+To, co je zelené (“changes to be committed”), se přidá do další revize (angl. commit), kterou vytvoříme. Pojďme tedy vytvořit revizi: 
 
 ```console
 $ git commit
@@ -213,7 +213,7 @@ A bohužel, ne všechny projekty mají přátelské autory.
 Na druhou stranu ale open-source programy mají svoje výhody: nejenom se z nich může kdokoli učit, 
 ale každý může i zkontrolovat, jestli dělají to, co dělat mají.
 Populární open-source programy nás například pravděpodobně nebudou špehovat (tj. hlásit autorovi, co na počítači děláme), 
-ani většinou neobsahují reklamy: kdyby to dělaly, najde se někdo kdo tyhle „funkce” odstraní 
+ani většinou neobsahují reklamy: kdyby to dělaly, najde se někdo kdo tyhle “funkce” odstraní 
 a lidé časem začnou používat opravenou verzi. 
 
 Některé příklady populárních open-source projektů:
@@ -250,10 +250,10 @@ a všichni uživatelé projektu, na kterém pracujeme, budou mít užitek z naš
 Nemáme ale do původního repozitáře práva na zápis, musíme tedy poslat změny nejprve do naší kopie repozitáře,
 vizte obrázek na začátku.
 
-Udělejte si účet na GitHubu (jestli ho ještě nemáte) a pak jděte na adresu [prezencky](https://github.com/asgeirrr/prezencka/),
+Udělejte si účet na GitHubu (jestli ho ještě nemáte) a pak jděte na adresu [prezencky](https://github.com/asgeirrr/attendance/),
 kterou jste použili pro `git clone`. 
-Vpravo nahoře je tlačítko „Fork”, klikněte na něj. Tím se na GitHubu vytvoří vaše kopie repozitáře:
-adresa by měla být něco jako `https://github.com/tvojejmeno/prezencka`.
+Vpravo nahoře je tlačítko “Fork”, klikněte na něj. Tím se na GitHubu vytvoří vaše kopie repozitáře:
+adresa by měla být něco jako `https://github.com/tvojejmeno/attendance`.
 
 A teď, jak nahrát změny z našeho počítače na GitHub? Git si u každého repozitáře na našem počítači pamatuje adresy, 
 odkud se dají stahovat a kam se dají posílat změny. 
@@ -261,8 +261,8 @@ Seznam těchto adres nám ukáže příkaz `git remote -v`. Třeba:
 
 ```console
 $ git remote -v
-origin  https://github.com/asgeirrr/prezencka (fetch)
-origin  https://github.com/asgeirrr/prezencka (push)
+origin  https://github.com/asgeirrr/attendance (fetch)
+origin  https://github.com/asgeirrr/attendance (push)
 ```
 
 Tenhle výstup znamená, že pod zkratkou *origin* se schovává adresa, ze které jsme repozitář naklonovali.
@@ -272,17 +272,17 @@ nebo svým uživatelským jménem na GitHubu,
 aby nám bylo jasné, že je to ten náš, do kterého můžeme nahrávat změny.
 
 ```console
-$ git remote add tvojejmeno https://github.com/tvojejmeno/prezencka
+$ git remote add tvojejmeno https://github.com/tvojejmeno/attendance
 ```
 
 Zkontrolujme, že se nám to povedlo:
 
 ```console
 $ git remote -v
-origin  https://github.com/asgeirrr/prezencka (fetch)
-origin  https://github.com/asgeirrr/prezencka (push)
-tvojejmeno  https://github.com/tvojejmeno/prezencka (fetch)
-tvojejmeno  https://github.com/tvojejmeno/prezencka (push)
+origin  https://github.com/asgeirrr/attendance (fetch)
+origin  https://github.com/asgeirrr/attendance (push)
+tvojejmeno  https://github.com/tvojejmeno/attendance (fetch)
+tvojejmeno  https://github.com/tvojejmeno/attendance (push)
 ```
 
 Tolik k nastavení ‒ `git remote add` stačí udělat jednou pro každý repozitář. Pak už můžeme změny nahrávat pomocí: 
@@ -293,7 +293,7 @@ $ git push tvojejmeno master
 
 což znamená: pošli na adresu uloženou pod zkratkou `tvojejmeno` větev `master`.
 
-Funguje? Můžeme se podívat na `https://github.com/tvojejmeno/prezencka` v prohlížeči a ujistit se, že tam změny jsou.
+Funguje? Můžeme se podívat na `https://github.com/tvojejmeno/attendance` v prohlížeči a ujistit se, že tam změny jsou.
 
 
 ### Žádost o začlenění (pull request)
@@ -321,7 +321,7 @@ Když budou změny od všech účastníků začleněné, můžeme si aktualizova
 $ git pull origin master
 ```
 
-stáhne změny z větve „master” z adresy pod zkratkou „origin”.
+stáhne změny z větve “master” z adresy pod zkratkou “origin”.
 Pomocí `git log` se můžeme podívat, jak se projekt mezitím vyvinul.
 
 Kruh se uzavřel, jsme schopni začlenit do projektu vlastní změny a naopak si stáhnout změny od ostatních. 

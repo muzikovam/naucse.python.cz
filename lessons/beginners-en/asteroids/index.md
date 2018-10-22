@@ -49,7 +49,7 @@ První krok bude naprogramovat vesmírnou loď, která půjde ovládat klávesni
   a pythonní dokumentace obsahuje k množinám
   [tutoriál](https://docs.python.org/3/tutorial/datastructures.html#sets)
   i [podrobný popis](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset).
-  Vesmírná loď se pak do množiny „podívá” v rámci
+  Vesmírná loď se pak do množiny “podívá” v rámci
   své metody `tick`.
 * Můžeš použít [sadu obrázků](http://opengameart.org/content/space-shooter-redux),
   které nakreslil [Kenney Vleugels](http://kenney.nl)
@@ -59,7 +59,7 @@ První krok bude naprogramovat vesmírnou loď, která půjde ovládat klávesni
   Všechny `Sprite`-y proto přidej do kolekce
   [pyglet.graphics.Batch](https://pythonhosted.org/pyglet/api/pyglet.graphics.Batch-class.html),
   kterou pak Pyglet umí efektivně vykreslit najednou.
-  Do „batche” jde přidávat pomocí argumentu při vytváření `Sprite()`
+  Do “batche” jde přidávat pomocí argumentu při vytváření `Sprite()`
   a odebírat pomocí `sprite.delete()`. Například:
 
   ```python
@@ -72,7 +72,7 @@ První krok bude naprogramovat vesmírnou loď, která půjde ovládat klávesni
   ```
 
   Kolekci `batch` si stejně jako `objects` uchovávej globálně.
-* Aby se objekty hýbaly a otáčely podle svých středů, je dobré nastavit „kotvu“
+* Aby se objekty hýbaly a otáčely podle svých středů, je dobré nastavit “kotvu”
   obrázku na jeho střed (jinak je kotva v levém dolním rohu):
 
   ```python
@@ -97,7 +97,7 @@ První krok bude naprogramovat vesmírnou loď, která půjde ovládat klávesni
       Rychlost otáčení závisí na stisknutých šipkách (doleva nebo doprava).
       V jednom případě je záporná, v druhém kladná. Vhodnou hodnotu zvol
       experimentováním – začni třeba u 4 radiánů za sekundu.
-      Všechny podobné „magické hodnoty“ je vhodné definovat
+      Všechny podobné “magické hodnoty” je vhodné definovat
       jako konstanty – tedy proměnné, které na začátku nastavíš a nikdy
       je neměníš. Bývá zvykem je označovat velkými písmeny a dávat je na
       začátek souboru, hned za importy:
@@ -140,14 +140,14 @@ První krok bude naprogramovat vesmírnou loď, která půjde ovládat klávesni
   si udržuje vlastní stav, takže by nemělo být složité
   jich vytvořit víc (a všechny ovládat najednou).
 * **Bonus 2**:
-  Možná sis všiml{{a}} „skoku”, když
+  Možná sis všiml{{a}} “skoku”, když
   raketa vyletí z okýnka a vrátí se na druhé straně.
   Tomu se dá zabránit tak, že
-  vlevo, vpravo, nahoře i dole vedle naší „scény”
+  vlevo, vpravo, nahoře i dole vedle naší “scény”
   vykreslíš celou scénu ještě jednou.
 
   Pyglet na to má speciální nízkoúrovňové funkce,
-  kterými můžeš říct „tady kresli všechno posunuté o
+  kterými můžeš říct “tady kresli všechno posunuté o
   X pixelů vlevo”. Úplné vysvětlení by bylo na dlouho,
   takže si zatím jen zkopíruj kód:
 
@@ -228,7 +228,7 @@ Naše asteroidy jsou zatím docela neškodné. Pojďme to změnit.
   Pro zjednodušení si každý objekt nahradíme
   kolečkem a budeme počítat, kdy se srazí kolečka.
   Každý objekt bude potřebovat mít poloměr – atribut `radius`.
-* Aby bylo vidět co si hra o objektech „myslí”,
+* Aby bylo vidět co si hra o objektech “myslí”,
   nakresli si nad každým objektem příslušné kolečko.
   Nejlepší je to udělat pomocí
   [pyglet.gl](http://pyglet.readthedocs.org/en/latest/programming_guide/gl.html)
@@ -314,7 +314,7 @@ Teď zkusíme asteroidy rozbíjet.
   Ve hře se to projeví tak, že se přidá objekt nové třídy `Laser`.
   Začne na souřadnicích raketky, s natočením raketky
   a s rychlostí raketky plus něco navíc ve směru natočení.
-* Každý objekt třídy `Laser` si „pamatuje“,
+* Každý objekt třídy `Laser` si “pamatuje”,
   jak dlouho ještě bude ve hře.
   Na začátku se tohle číslo nastaví tak, aby přeletěl
   zhruba něco víc než jednu obrazovku.
@@ -350,7 +350,7 @@ vlastní rozšíření!
   a dokud nějaký zbývá, raketka se po zásahu
   asteroidem objeví znovu uprostřed,
   s nulovou rychlostí.
-  Hra by taky při tomto „restartu” měla ignorovat
+  Hra by taky při tomto “restartu” měla ignorovat
   držené klávesy, dokud je hráč znovu nezmáčkne
   (nejlépe pomocí `pressed_keys.clear()`).
 
@@ -358,7 +358,7 @@ vlastní rozšíření!
   na spodku obrazovky.
 
   **Bonus:** Několik vteřin po
-  „restartu” může být raketka nezničitelná,
+  “restartu” může být raketka nezničitelná,
   aby měla čas odletět, když je zrovna uprostřed
   okýnka asteroid.
 * Je hra příliš lehká?
@@ -380,9 +380,9 @@ vlastní rozšíření!
   toho, jak dlouho už jsou ve hře.
 
   Na efekty můžeš použít obrázky
-  [„Smoke particle assets”](http://opengameart.org/content/smoke-particle-assets),
+  [“Smoke particle assets”](http://opengameart.org/content/smoke-particle-assets),
   které nakreslil opět [Kenney Vleugels](http://kenney.nl).
-  Doporučuji „White Puff”, které můžeš zmenšit
+  Doporučuji “White Puff”, které můžeš zmenšit
   (např. `sprite.scale = 1/10`),
   přibarvit
   (např. `sprite.color = 255, 100, 0`)

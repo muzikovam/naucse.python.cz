@@ -2,7 +2,7 @@ git init
 
 git status
 
-cat > basnicka.txt << END
+cat > poem.txt << END
 Holka modrooká, nesedávej u potoka
 Holka modrooká, nesedávej tam
 
@@ -12,14 +12,14 @@ Holka modrooká, nesedávej tam
 END
 
 git status
-git add basnicka.txt
+git add poem.txt
 git status
-GIT_EDITOR='echo "První revize" >' git commit
+GIT_EDITOR='echo "First revision" >' git commit
 
 git status
 git show
 
-cat > basnicka.txt << END
+cat > poem.txt << END
 Holka modrooká
 Nesedávej u potoka
 Holka modrooká
@@ -33,7 +33,7 @@ END
 
 git status
 git diff
-git add basnicka.txt
+git add poem.txt
 git status
 
 GIT_EDITOR="echo \"$second_msg\" >" git commit
@@ -45,16 +45,16 @@ git config -l
 
 take_screenshot $OUTFILE.gitk.png gitk --all
 
-git add basnicka.txt
+git add poem.txt
 GIT_EDITOR="echo \"$second_msg\" >" git commit
 
 git branch
-git branch doplneni-autora
+git branch add-author
 git branch
-git checkout doplneni-autora
+git checkout add-author
 git branch
 
-cat > basnicka.txt << END
+cat > poem.txt << END
 Holka modrooká
 Nesedávej u potoka
 Holka modrooká
@@ -68,17 +68,17 @@ Nesedávej tam
 - Lidová
 END
 
-git add basnicka.txt
+git add poem.txt
 GIT_EDITOR='echo "Doplnění autora" >' git commit
 
 take_screenshot $OUTFILE.branch1.png gitk --all
 
 git checkout master
-git branch doplneni-jmena
-git checkout doplneni-jmena
+git branch add-name
+git checkout add-name
 git branch
 
-cat > basnicka.txt << END
+cat > poem.txt << END
 Holka modrooká
 =========
 
@@ -93,18 +93,18 @@ Holka modrooká
 Nesedávej tam
 END
 
-git add basnicka.txt
+git add poem.txt
 GIT_EDITOR='echo "Doplnění jména" >' git commit
 
 take_screenshot $OUTFILE.branches.png gitk --all
 
 git checkout master
-git merge doplneni-jmena
-git merge doplneni-autora
+git merge add-name
+git merge add-author
 git branch
 
 take_screenshot $OUTFILE.merge.png gitk --all
 
-git branch -d doplneni-autora
-git branch -d doplneni-jmena
+git branch -d add-author
+git branch -d add-name
 git branch

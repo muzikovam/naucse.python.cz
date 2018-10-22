@@ -47,7 +47,7 @@ jméno souboru a <span class="err-lineno">číslo řádku</span>,
 na kterém chyba je.
 Potom vypíše celý řádek s chybou
 a nakonec oznámí <span class="err-exctype">druh chyby</span>
-(v tomto případě je to „syntaktická chyba“)
+(v tomto případě je to “syntaktická chyba”)
 a případně nějaké bližší upřesnění.
 
 > [note] Pro zvídavé
@@ -87,7 +87,7 @@ počítač čte odshora dolů a provádí příkazy jeden po druhém.
 
 ## Print a výrazy
 
-A z jakých že instrukcí se náš „recept“ skládá?
+A z jakých že instrukcí se náš “recept” skládá?
 
 Ten `print`, který tu celou dobu používáš, je *funkce*.
 O funkcích se ještě budeme bavit později,

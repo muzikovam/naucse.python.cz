@@ -5,7 +5,7 @@ který vypočítá obsah a obvod čtverce, u kterého známe délku strany.
 
 > [note] Matematika!
 > Doufám, že tenhle příklad nikoho neodradí,
-> ale „počítač“ je holt od slova *počítat*.
+> ale “počítač” je holt od slova *počítat*.
 > Není třeba se děsit;
 > na základy programování si vystačíme s matematickými
 > znalostmi ze základní školy.
@@ -67,7 +67,7 @@ jak bys zajistil{{a}}, že jedno z těch čísel nepřehlédneš?
 
 Existuje způsob, jak program napsat,
 aniž bys musela pokaždé přepisovat všechna čísla:
-stranu čtverce si „pojmenuješ“ a potom používáš jenom její jméno.
+stranu čtverce si “pojmenuješ” a potom používáš jenom její jméno.
 V Pythonu na pojmenovávání hodnot slouží *proměnné* (angl. *variables*).
 Používají se takto:
 
@@ -86,7 +86,7 @@ použije se zapamatovaná hodnota.
 > Je zvykem dát před i za rovnítko po jedné mezeře.
 
 To nás vede k jedné ze základních programátorských
-zásad: „neopakuj se“ (anglicky *Don't repeat yourself*, <abbr class="initialism">DRY</abbr>).
+zásad: “neopakuj se” (anglicky *Don't repeat yourself*, <abbr class="initialism">DRY</abbr>).
 Když se někde opakuje stejná hodnota, stejný výraz
 nebo stejný kus kódu,
 {{ gnd('dobrý programátor', 'dobrá programátorka', both='dobrý programátor') }}

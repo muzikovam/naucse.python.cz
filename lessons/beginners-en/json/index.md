@@ -3,7 +3,7 @@
 Existují i jiné programovací jazyky než Python.
 
 Ostatní jazyky neumí pracovat s pythonními hodnotami.
-Budeš-li se chtít s takovými programy „domluvit” –
+Budeš-li se chtít s takovými programy “domluvit” –
 předat jim nějaké informace ke zpracování
 nebo od nich dostat výsledky –
 musíš informace předávat v nějaké zjednodušené podobě.
@@ -74,7 +74,7 @@ K▒u.
 ```
 
 A nakonec uvedu [JSON](http://json.org/)
-(z angl. *Javascript Object Notation* „zápis Javascriptových objektů”),
+(z angl. *Javascript Object Notation* “zápis Javascriptových objektů”),
 který se pro svou jednoduchost rozšířil na Internetu nejvíc:
 
 ```json

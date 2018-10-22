@@ -11,7 +11,7 @@ prvky *trojice* (angl. *3-tuple*),
 se čtyřmi *čtveřice* (angl. *4-tuple*), atd.
 
 > [note]
-> Existují i <var>n</var>-tice s jedním prvkem (hmm… „jednice”?)
+> Existují i <var>n</var>-tice s jedním prvkem (hmm… “jednice”?)
 > a s nula prvky (prázdné <var>n</var>-tice, angl. *empty tuple*),
 > ale těmi se ze začátku nebudeme zabývat.
 
@@ -71,7 +71,7 @@ def podil_a_zbytek(a, b):
 Python umí ještě jeden trik: pokud chceš přiřadit
 do několika proměnných najednou, stačí je na levé
 straně rovnítka oddělit čárkou a na pravou stranu
-dát nějakou „složenou” hodnotu – třeba právě
+dát nějakou “složenou” hodnotu – třeba právě
 <var>n</var>-tici.
 
 ```python
@@ -89,17 +89,17 @@ jedna, dva, tri = [1, 2, 3]
 ## Funkce, které vracejí <var>n</var>-tice
 
 `zip` je zajímavá funkce.
-Používá se ve `for` cyklech, podobně jako funkce `range`, která „dává” čísla.
+Používá se ve `for` cyklech, podobně jako funkce `range`, která “dává” čísla.
 
 Když funkce `zip` dostane dva seznamy
 (či jiné věci použitelné ve `for`),
-„dává” dvojice, a to tak, že nejdřív spáruje
+“dává” dvojice, a to tak, že nejdřív spáruje
 první prvek jednoho seznamu s prvním prvkem
 druhého seznamu,
 pak druhý s druhým, třetí s třetím a tak dál.
 
 Hodí se to, když máš dva seznamy se stejnou
-strukturou – příslušné prvky k sobě „patří”
+strukturou – příslušné prvky k sobě “patří”
 a chceš je zpracovávat společně:
 
 ```python
@@ -156,7 +156,7 @@ Oproti tomu `for pozdrav in 'Ahoj', 'Hello', 'Hola', 'Hei', 'SYN':`
 používá <var>n</var>-tici.
 
 <var>N</var>-tice se často používají na hodnoty
-různých typů, kdy má každá „pozice”
+různých typů, kdy má každá “pozice”
 v <var>n</var>-tici úplně jiný význam.
 Například seznam můžeš použít na písmena abecedy,
 ale dvojice index–hodnota z `enumerate`

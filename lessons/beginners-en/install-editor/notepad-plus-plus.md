@@ -18,8 +18,8 @@ a nainstaluj.
 
 Odsazování
 :   V menu Nastavení zvol Předvolby a pak nastav
-    „Nastavení tabulátoru<span class="en">/Tab Settings</span>“ na 
-    „Zaměnit za mezery<span class="en">/Replace by Space</span>“.
+    “Nastavení tabulátoru<span class="en">/Tab Settings</span>” na 
+    “Zaměnit za mezery<span class="en">/Replace by Space</span>”.
 
 Obarvování bude fungovat automaticky v souborech s koncovkou `.py`
 (jako Python).

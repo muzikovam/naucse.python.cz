@@ -78,7 +78,7 @@ $ python vypis.py
 ```
 
 Příkaz `import` hledá soubory (mimo jiné) v adresáři,
-ve kterém je „hlavní modul” programu – tedy soubor,
+ve kterém je “hlavní modul” programu – tedy soubor,
 který spouštíš (u nás `vypis.py`).
 Oba soubory by proto měly být ve stejném adresáři.
 
@@ -90,7 +90,7 @@ Co přesně dělá příkaz `import louka`?
 Python najde příslušný soubor (`louka.py`) a provede v něm všechny příkazy,
 odshora dolů, jako v normálním Pythonním programu.
 Všechny globální proměnné (včetně nadefinovaných funkcí) pak dá k dispozici
-kódu, který „louku“ importoval.
+kódu, který “louku” importoval.
 
 Když pak stejný modul importuješ podruhé, už se neprovádí všechno
 znovu – stejná sada proměnných se použije znovu.
@@ -112,7 +112,7 @@ A pak spusť `python` (máš-li ho už spuštěný, ukonči a spusť znovu), a z
 
 Výpis se objeví jen poprvé.
 
-Když takhle modul při importu „něco dělá“ (něco vypíše na obrazovku,
+Když takhle modul při importu “něco dělá” (něco vypíše na obrazovku,
 zapíše do souboru, na něco se zeptá uživatele atp.), říká se,
 že má *vedlejší efekt* (angl. *side effect*).
 V modulech připravených na importování se vedlejším efektům vyhýbáme:

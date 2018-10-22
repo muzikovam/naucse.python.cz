@@ -20,7 +20,7 @@
 
 Dnes budeme programovat malé zařízení –
 tak malé, že ho pohodlně schováš v ruce.
-Konkrétně budeme používat „chytrou destičku”, modul zvaný
+Konkrétně budeme používat “chytrou destičku”, modul zvaný
 *NodeMCU Devkit*, která by měla ležet před tebou.
 Než ji vyndáš z obalu, měla by ses *vybít*:
 dotkni se něčeho kovového, co je spojeno se zemí,
@@ -51,7 +51,7 @@ pojďme projít její základní součásti.
 Nejdůležitější část vývojové desky je v oplechované
 krabičce s logem "Wi-Fi" a "FCC":
 <span class="part-green">mikroprocesor ESP8266</span>.
-To je „mozek” celého zařízení, který – když je
+To je “mozek” celého zařízení, který – když je
 správně naprogramován – umí provádět pythonní
 příkazy a programy.
 Procesor sedí na malé destičce, na které je ještě
@@ -63,7 +63,7 @@ všechno ostatní, co kolem ní zabírá tolik místa,
 nám jen ulehčí hraní a umožní se zařízením
 jednoduše komunikovat a krmit ho elektřinou.
 
-Komunikace a „krmení” se děje přes
+Komunikace a “krmení” se děje přes
 <span class="part-red">μUSB konektor</span>,
 do kterého zapojíš kabel ze svého počítače.
 Když je modul naprogramovaný, stačí ho místo do
@@ -73,11 +73,11 @@ počítače zapojit do nabíječky či externího zdroje
 Kolem USB konektoru jsou dvě tlačítka:
 <code class="part-orange">RST</code>, kterým se destička restartuje
 (skoro jako kdybys ho odpojila a zase zapojila, což
-se hodí, když něco uděláš špatně a modul „zamrzne”),
+se hodí, když něco uděláš špatně a modul “zamrzne”),
 a <code class="part-yellow">FLASH</code>, o kterém si povíme později.
 
 Po stranách modulu jsou dvě řady
-<span class="part-blue">„nožiček”</span>, na které
+<span class="part-blue">“nožiček”</span>, na které
 se dá napojit celá řada nejrůznějších hraček.
 Zkontroluj si, jestli jsou všechny nožičky rovné;
 kdyby byla některá ohnutá, tak ji (nejlépe s pomocí
@@ -252,7 +252,7 @@ výjimky, moduly a tak dál.
 Některé detaily ale jsou trochu osekané, aby se všechno
 vešlo do extrémně malého prostoru.
 Zkus si, jak se liší efekt následujících příkazů
-od „velkého” Pythonu:
+od “velkého” Pythonu:
 
 ```pycon
 >>> print
@@ -298,17 +298,17 @@ Jak se hodnota změní?
 
 Jak tomuhle kódu rozumět?
 Třída `Pin` ti umožňuje ovládat jednotlivé
-„nožičky”, kterými zařízení komunikuje s vnějším
+“nožičky”, kterými zařízení komunikuje s vnějším
 světem: buď na nich nastavovat napětí, nebo zkoumat
 jestli na nich nějaké napětí je.
 
 `Pin(0, Pin.IN)` vytvoří objekt třídy Pin,
-který bude načítat data z „nožičky” číslo 0.
+který bude načítat data z “nožičky” číslo 0.
 (`IN` znamená načítání – informace jdou *do* procesoru).
 Funkce `pin.value()` změří napětí na dané
-„nožičce” a vrátí buď 1 nebo 0 podle toho, jestli nějaké naměřila.
+“nožičce” a vrátí buď 1 nebo 0 podle toho, jestli nějaké naměřila.
 
-No a „nožička” číslo 0 je připojená k tlačítku `FLASH`,
+No a “nožička” číslo 0 je připojená k tlačítku `FLASH`,
 kterým se tak dá ono napětí ovládat.
 Informace o tom, která nožička je kam připojená,
 máš na [taháku](https://pyvec.github.io/cheatsheets/micropython/nodemcu-cs.pdf) –
@@ -318,15 +318,15 @@ můžeš si zkontrolovat, že Pin(0) u sebe má poznámku FLASH.
 ## Obvod
 
 Teď na chvíli necháme programování a postavíme si elektrický obvod.
-Vezmi si modrou svítivou diodu (LED, „světýlko”) a
-nepájivé pole („hloupou destičku”).
+Vezmi si modrou svítivou diodu (LED, “světýlko”) a
+nepájivé pole (“hloupou destičku”).
 Zkusíme světýlko rozsvítit.
 
 LED rozsvítíš tak, že ji připojíš ke *zdroji napětí*, například k baterce.
 
 Jako zdroj napětí můžeme použít i náš modul.
 Ten bere elektřinu přes USB a dává nám ji k dispozici
-na některých svých „nožičkách”:
+na některých svých “nožičkách”:
 konkrétně plus na nožičce označené `3V`
 a mínus na nožičce označené `G`.
 Na tyhle nožičky musíš zapojit diodu.
@@ -390,7 +390,7 @@ kolik modrá LED potřebuje ke svícení.
 > říct, že je na jednom místě 3,3 V je nepřesné.
 > Hodnota ve voltech se vždycky musí k něčemu vztahovat;
 > vyjadřuje rozdíl mezi dvěma místy.
-> V elektronice používáme rozdíl oproti „zemi” – napětí
+> V elektronice používáme rozdíl oproti “zemi” – napětí
 > na nožičce `G`. Stanovíme si, že tam je
 > 0 voltů a ostatní napětí počítáme vzhledem k ní.
 > Na nožičce `3V` je tedy napětí 3,3 V vzhledem k zemi.
@@ -492,7 +492,7 @@ tedy `time.sleep(1/2)` zastaví program na půl sekundy.
 
 ## Velice rychle blikat
 
-Jedna z nevýhod „našeho” čipu ESP8266 je, že na svých
+Jedna z nevýhod “našeho” čipu ESP8266 je, že na svých
 nožičkách umí nastavovat jen dvě hodnoty – 3,3 V a zem, jedničku a nulu.
 Dioda tak buď svítí, nebo nesvítí – nedá se
 nastavit poloviční intenzita, nedá se plynule rozsvěcet nebo zhasínat.
@@ -543,7 +543,7 @@ Každý objekt téhle třídy umí ovládat jednu nožičku
 a dají se u něj nastavit dva parametry:
 
 * `freq` – frekvence, tedy kolikrát za sekundu se LED rozsvítí a zase zhasne a
-* `duty` – anglicky *duty cycle*, česky *střída*, nastavuje „šířku pulzu”,
+* `duty` – anglicky *duty cycle*, česky *střída*, nastavuje “šířku pulzu”,
   tedy jak dlouho bude dioda při každém bliknutí svítit.
   Hodnota `duty` může být od 0, kdy LED
   nesvítí vůbec, do 1023, kdy svítí celou dobu.
@@ -571,7 +571,7 @@ i když zatím můžeš jednoduše restartovat celé zařízení.
 
 ## Tóny a melodie
 
-Vezmi si další součástku – piezobudič, neboli „bzučítko”.
+Vezmi si další součástku – piezobudič, neboli “bzučítko”.
 
 Tahle malá věc obsahuje speciální materiál, který se,
 když ho připojíš ke zdroji napětí, trošku roztáhne.
@@ -588,7 +588,7 @@ Nebo 65×?
 
 Nebo některou z těchto frekvencí?
 Hz – [Hertz](https://en.wikipedia.org/wiki/Hertz) – je jednotka frekvence;
-„49 Hz“ znamená „49× za sekundu“.
+“49 Hz” znamená “49× za sekundu”.
 
 | Nota | Frekvence |
 |:-----|----------:|
@@ -630,7 +630,7 @@ Program si (na svém počítači) ulož, ať se k němu můžeš vrátit.
 
 Servomotor je součástka, která má v sobě zabudovaný
 ovladač, se kterým si naše zařízení může povídat
-jednoduchým „elektronickým jazykem” – *protokolem*.
+jednoduchým “elektronickým jazykem” – *protokolem*.
 Motorku můžeš posílat impulzy a podle délky impulzu
 se servomotor natočí.
 Při krátkých impulzech se natočí víc na jednu stranu,
@@ -684,10 +684,10 @@ energie, než k rozsvícení světýlka.
 Z USB z počítače té energie dostaneš docela málo,
 proto můžou být s motorkem problémy.
 
-Jak to řešit, až si přestaneš hrát a budeš chtít motorkem otáčet „doopravdy”?
+Jak to řešit, až si přestaneš hrát a budeš chtít motorkem otáčet “doopravdy”?
 
 Elektronika, která je na našem modulu mimo
-malou destičku s „mozkem” má dva hlavní úkoly:
+malou destičku s “mozkem” má dva hlavní úkoly:
 
 * Převádět *komunikaci* z USB, která je
   celkem složitě zakódovaná, na něco čemu
@@ -727,7 +727,7 @@ poskytuje modul.
 
 Když připojíš zařízení k menšímu napětí, než
 potřebuje, většinou buď nebude fungovat, nebo bude
-dělat „míň” než by mělo: LED bude míň svítit,
+dělat “míň” než by mělo: LED bude míň svítit,
 reproduktor bude tišší, motorek se bude točit pomaleji nebo s menší silou.
 
 Když naopak připojíš zařízení k *většímu* napětí,
@@ -795,7 +795,7 @@ Nožička `VU`/`VIN` poskytuje 5 voltů.
 Pozor na ni: nepřipojuj na ni zařízení, které se s pěti volty nevyrovnají.
 
 Máš-li zapojeno, můžeš začít programovat.
-„Jazyk”, kterým „mluví” tenhle LED pásek je trošku
+“Jazyk”, kterým “mluví” tenhle LED pásek je trošku
 složitější než signál PWM, ale MicroPython obsahuje
 speciální knihovnu, která s páskem komunikovat umí.
 Vypadá to nějak takhle:
