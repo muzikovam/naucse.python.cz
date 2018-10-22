@@ -173,7 +173,7 @@ This can make the work harder sometimes. Let's see it on a more complex project:
 {% endif -%}
 > If you study at home, you can complete 1D tic-tac-toe before continuing.
 > The homework assignment is in [PyLadies projects](http://pyladies.cz/v1/s004-strings/handout/handout4.pdf)
-> on page 2.
+> on page 2 (the English translation is at [one-dimensional tic-tac-toe](tic_tac_toe.md)).
 
 The structure of the 1D tic-tac-toe code can look like this:
 
