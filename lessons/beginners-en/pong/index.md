@@ -4,55 +4,54 @@
     <img src="{{ static('pong.png') }}" alt="">
 </div>
 
-Now we will deepen the knowledge of programming graphics applications
+Now we will deepen our knowledge of programming graphics applications
 which we got in the last [lecture about Pyglet]({{ lesson_url('intro/pyglet') }}),
-by creating real program.
+by creating a real program.
 
 We will program one of the first video game ever, [Pong](https://en.wikipedia.org/wiki/Pong).
 Pong was released by [Atari](https://en.wikipedia.org/wiki/Atari,_Inc.)
-as their first game of year 1972 and it started the gaming industry revolution.
+as their first game of the year 1972 and it started the gaming industry revolution.
 
-You can have a look on 
-[video, which shows how Pong is played](https://www.youtube.com/watch?v=fiShX2pTz9A).
+Have a look at this [video, which shows how Pong is played](https://www.youtube.com/watch?v=fiShX2pTz9A).
 
 
 ## Constants and state of the game
 
 The Pong game has simple rules. But we have to know how
-to express them in Python, and it is not that easy.
-Let's take a look at what have to be in the game.
+to express them in Python, and that is not that easy.
+Let's take a look at what has to be in the game.
 
-* Game board in rectangle shape with a net in the middle.
-* A ball flying at a certain speed over the game field.
-* Two bats moving vertically by the edges of the field.
+* A game board with a rectangular shape with a net in the middle.
+* A ball flying at a certain speed across the game field.
+* Two paddles moving vertically along the edges of the field.
 * Two score counters.
 
-The game will be for 2 players, we will not program the behavior of the computer.
-Each player can control their bat by pressing the exact key.
-One player can control the bat by up and down arrows and the other one by
+The game is for 2 players, we will not program the behaviour of the computer.
+Each player can control their paddle by pressing the exact key.
+One player can control the paddle by up and down arrows and the other one by
 <kbd>W</kbd> and <kbd>S</kbd> keys.
 
 We can express the state of the game in Python using variables and
 constants. Which makes sense because some things change in the game 
-(bats position, ball position, ball speed, score) and some do not 
-(size of the playing area, size of the bats and
+(the paddles' positions, ball positions, ball speeds, score) and some do not 
+(size of the playing area, size of the paddle and
 ball, position and size of score counters).
-From the complex data structures we will use list (which we already know)
-and set, which is similar to set in maths. It's similar to list but
-it doesn't care about the order and there can't be any two or more 
+From the complex data structures, we will use list (which we already know)
+and set, which is similar to a set in maths. It's similar to a list but
+it doesn't care about the order and there can't be two or more of the 
 same elements.
 
 You might be wondering in what units we can measure
-distance and speed in such game on a computer.
+distance and speed in such a game on a computer.
 On the screen, it is not practical to measure the distance
 in centimeters. However, each screen is composed
-from individual luminous points, ie. *pixels*.
+from individual luminous points, i.e. *pixels*.
 In a graphical application such as Pong, we can measure the
 distance of two places on the screen as the number of pixels
-between these two places. Coordinate system of Pyglet
+between these two places. The coordinate system of Pyglet
 is based on pixels, where the pixel with the [0, 0] 
 coordinates is on the bottom left of the screen.
-The speed can be measured in in pixels per second.
+The speed can be measured in pixels per second.
 
 Create a new file. Together we will define *constants*, which
 we will need during the game creation. Usually, we would define the 
@@ -78,12 +77,12 @@ TEXT_ALIGN = 30
 ```
 
 We will now define *variables* that we will need: ball coordinates,
-bat coordinates, pressed keys and score of two players.
-Those variables will be global which would made any programmer 
-furious but it will ease our work for now.
+paddle coordinates, pressed keys and score of two players.
+Those variables will be global, which would make any programmer 
+furious, but it will ease our work for now.
 
 ```python
-bat_coordinates = [HEIGHT // 2, HEIGHT // 2]  # vertical position of two bats
+bat_coordinates = [HEIGHT // 2, HEIGHT // 2]  # vertical position of two paddles
 ball_coordinates = [0, 0]  # x, y ball coordinates -- set in reset()
 ball_speed = [0, 0]  # x, y components of ball speed -- set in reset()
 keys_pressed = set()  # set of pressed keys
@@ -101,15 +100,15 @@ window = pyglet.window.Window(width=WIDTH, height=HEIGHT)
 pyglet.app.run()  # everything is set, let the game begin
 ```
 
-Before we start to make an interactive part of the game responding to inputs
-from the user we have to be able to draw everything that should be on the game
-board. Just like in the Pyglet lesson where we had function `draw()` which
-rendered the python we will have similar function in the Pong which will
+Before we start to make the interactive part of the game that responds to inputs
+from the user, we have to be able to draw everything that should be on the game
+board. Just like in the Pyglet lesson where we had the function `draw()` which
+rendered the snake, we will have a similar function in Pong, which will
 render all elements on the board.
 
-Most of the shapes are rectangles so let's create
+Most of the shapes are rectangles, so let's create
 a function `draw_rectangle` which will get 4 coordinates
-and which will draw rectangle with the help of module `gl`
+and which will draw a rectangle with the help of the module `gl`
 by drawing two triangles.
 
 ```python
@@ -136,12 +135,12 @@ def draw_rectangle(x1, y1, x2, y2):
     gl.glEnd()  # stop drawing the triangles
 ```
 
-We can now start to work on `render()` function.
-First create it empty and register it with `on_draw` event.
-That means that it will be called everytime when Pyglet redraws 
-the window. If, for example, the position of the ball has changed the
-function will draw it a bit elsewhere. By this we are creating
-the game dynamics. We also did it with the python, but now we have more 
+We can now start to work on the `render()` function.
+First create it empty and register it with the `on_draw` event.
+That means that it will be called every time when Pyglet redraws 
+the window. If, for example, the position of the ball has changed, the
+function will draw it in the new spot. By doing this we are creating
+the game dynamics. We also did it with the snake, but now we have more 
 graphical elements. 
 
 ```python
@@ -158,8 +157,8 @@ window.push_handlers(
 pyglet.app.run()  # everything is set, let the game begin
 ```
 
-For now we only have cleaning of the window and setting the drawing
-colour to white in the body of our function.
+For now, the only things in the body of our function are 
+clearing the window and setting the drawing colour to white,
 
 Try to add to the `render()` function rendering of the ball in the 
 right position which you will get from the relevant global variable.
@@ -180,10 +179,10 @@ def render():
 {% endfilter %}
 
 
-After that try to draw both *bats*.
-We have the vertical position of one bat stored in the 
+After that try to draw both *paddles*.
+We have the vertical position of one paddle stored in the 
 `bat_position` variable. Horizontal position is a constant.
-What coordinates do you have to pass to `draw_rectangle` so the bat
+What coordinates do you have to pass to `draw_rectangle` so the paddle
 is rendered correctly and on the right position? It is similar to
 drawing the ball.
 
@@ -191,8 +190,8 @@ drawing the ball.
 ```python
 def render():
     ...
-    # bats - we will create list of bats coordinates and for each pair of coordinates
-    # in this list we will draw the bat
+    # bats - we will create list of paddle coordinates and for each pair of coordinates
+    # in this list we will draw the paddle
     for x, y in [(0, bat_coordinates[0]), (WIDTH, bat_coordinates[1])] :
         draw_rectangle(
             x - BAT_THICKNESS,
@@ -277,14 +276,14 @@ Yay, now we have the whole game board rendered. Let's put it in motion!
 
 ## Game dynamics
 
-Now it will start to be interesting. Let's move with bats first,
+Now it will start to be interesting. Let's move with paddles first,
 because it's easier, and then with the ball.
 
 ### User's input
 
-We need to move with the bats regarding to user input.
-As long as they will hold for example key <kbd>S</kbd>, left
-bat will be moving down.
+We need to move with the paddles regarding to user input.
+As long as they will hold for example key <kbd>S</kbd>, the left
+paddle will be moving down.
 In previous lesson we learned how to work with event `on_text`,
 but this one won't be enough. We will need 2 types of events
 which we don't know yet - `on_key_press` and `on_key_release`.
@@ -293,12 +292,12 @@ Pyglet calls a function registered to event `on_key_press`
 the same way it calls function `render()` registered to
 event `on_draw`.
 We will add pressed key to the global variable `keys_pressed`
-as tuple with direction and bat's number, e. g. `('up',0)`,
-which means that left bat have to go up.
+as tuple with direction and the paddle's number, e. g. `('up',0)`,
+which means that left paddle have to go up.
 We will remove the tuple from the `keys_pressed` set 
 when `on_key_release` happens. This will ensure that the set `keys_pressed`
 includes all the keys the user holds and we will be able to move
-the bats according to that.
+the paddles according to that.
 
 Will you try to code `key_press(symbol, modifiers)` and
 `key_release(symbol, modifiers)` functions by yourself?
@@ -364,10 +363,10 @@ window.push_handlers(
 pyglet.app.run()
 ```
 
-### Bat movement
+### Paddle movement
 
 Once we were able to process input from the user,
-we can move with bats regarding that.
+we can move with paddles regarding that.
 We will move the objects in the function `revive(dt)`,
 which will be registered to the clock. Argument `dt`
 is time that passed from the last call.
@@ -390,20 +389,20 @@ def revive(dt):
 ```
 
 Let's have a look at this piece of code.
-We are going through both bats in a loop 
+We are going through both paddles in a loop 
 and we ask if there is the tuple of direction
-and number of bat in the set `keys_pressed`.
-If yes we *move* with the bat regarding to
+and number of paddles in the set `keys_pressed`.
+If yes we *move* with the paddle regarding to
 the direction(we add to or deduct from the vertical
-position of the bat the change which is time from
-the last call multiplied by bat speed which we have
+position of the paddle the change which is time from
+the last call multiplied by paddle speed which we have
 in constants).
 
-In the second part we have to make sure that bat doesn't
+In the second part we have to make sure that paddle doesn't
 appear *outside* of the game board. We know from the last
 lesson when we were playing with the python image that it
-can happen very easily. We are drawing bat from the 
-middle, which means that if the bat `y` coordinate is lower than 
+can happen very easily. We are drawing paddle from the 
+middle, which means that if the paddle `y` coordinate is lower than 
 `BAT_LENGTH / 2` it is going outside of the board. 
 In that case we will fix the position to the lowest possible coordinate.
 It is done also for the top edge accordingly.
@@ -500,15 +499,15 @@ def revive(dt):
         ball_speed[1] = -abs(ball_speed[1])
 ```
 
-Now we have to code the bounce from the bat, or a 
+Now we have to code the bounce from the paddle, or a 
 game reset if the ball is not hit by one of the player's
-bat(that means that the other one gets a point).
+paddle (that means that the other one gets a point).
 We will be adding something to our `revive(dt)`
 function again.
 
 First step is to set bounds on y axis where the ball can be to be
-successfully hit with a bat - between upper and lower
-edge of a bat:
+successfully hit with a paddle - between upper and lower
+edge of a paddle:
 
 ```python
 def revive(dt):
@@ -518,7 +517,7 @@ def revive(dt):
 ```
 
 Now when the ball hits the left or the right wall we can ask
-if the bat it on the right spot so we can `bounce` ball back or
+if the paddle it on the right spot so we can `bounce` ball back or
 if it isn't so one player lost and the other one gets point and
 we can `reset` the game.
 
@@ -547,6 +546,6 @@ def obnov_stav(dt):
 
 ## The end
 
-Hooray, we finished the Pong! Now you have fully
+Hooray, we finished our Pong game! Now you have a fully
 functioning interactive graphical game based
 on real game :)
